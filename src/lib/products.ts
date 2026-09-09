@@ -26,6 +26,7 @@ export const products: Product[] = [
     collection: "Genesis//001",
     drop: "Genesis//001 The Hunt Begins",
     details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
+    image: "/images/the-king.png",
   },
   {
     id: "the-hunter",
@@ -38,6 +39,7 @@ export const products: Product[] = [
     collection: "Genesis//001",
     drop: "Genesis//001 The Hunt Begins",
     details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
+    image: "/images/the-hunter.png",
   },
 ];
 
