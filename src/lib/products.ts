@@ -7,42 +7,37 @@ export type Product = {
   colors: string[];
   featured?: boolean;
   collection?: string;
+  drop?: string;
   details?: string[];
+  image?: string;
 };
+
+export const DROP_NAME = "Genesis//001 The Hunt Begins";
 
 export const products: Product[] = [
   {
-    id: "redtail-hawk-tee",
-    name: "Redtail Hawk Tee",
-    description: "The original. Clean lines, heavy cotton, built to outlast trends. The hawk watches.",
-    price: 55,
+    id: "the-king",
+    name: "The King",
+    description: "Gold. Dominant. Unapologetic. The King doesn't hunt — everything comes to him.",
+    price: 65,
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    colors: ["Bone", "Slate", "Obsidian"],
+    colors: ["Gold"],
     featured: true,
-    collection: "Founding Collection",
+    collection: "Genesis//001",
+    drop: "Genesis//001 The Hunt Begins",
     details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
   },
   {
-    id: "territory-tee",
-    name: "Territory Tee",
-    description: "Minimal. Earned. For those who know where they came from and where they're going.",
-    price: 48,
+    id: "the-hunter",
+    name: "The Hunter",
+    description: "Red. Patient. Relentless. The Hunter moves when the moment demands — not a second before.",
+    price: 65,
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    colors: ["Bone", "Obsidian"],
+    colors: ["Red"],
     featured: true,
-    collection: "Founding Collection",
-    details: ["100% heavyweight cotton", "Regular fit", "Pre-washed for softness", "Embroidered chest logo"],
-  },
-  {
-    id: "pursuit-tee",
-    name: "Pursuit Tee",
-    description: "For those who move without asking permission. Raw energy, refined form.",
-    price: 52,
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    colors: ["Slate", "Desert"],
-    featured: true,
-    collection: "Founding Collection",
-    details: ["100% heavyweight cotton", "Oversized fit", "Pre-washed for softness", "Screenprinted back graphic"],
+    collection: "Genesis//001",
+    drop: "Genesis//001 The Hunt Begins",
+    details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
   },
 ];
 

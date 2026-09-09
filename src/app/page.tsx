@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getFeaturedProducts } from "@/lib/products";
+import { getFeaturedProducts, DROP_NAME } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
 export default function HomePage() {
@@ -19,7 +19,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-xl">
-            <p className="text-[10px] tracking-[0.4em] text-[#8b1212] mb-5">FOUNDING COLLECTION — 2026</p>
+            <p className="text-[10px] tracking-[0.4em] text-[#8b1212] mb-5">{DROP_NAME.toUpperCase()}</p>
             <h1 className="font-display text-[clamp(3.5rem,7vw,6rem)] leading-[0.92] tracking-wide text-stone-100 mb-5">
               FORGED<br />IN<br />INSTINCT
             </h1>
@@ -47,7 +47,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="flex items-end justify-between mb-12">
           <div>
-            <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">THE LINE</p>
+            <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
             <h2 className="font-display text-4xl tracking-wide text-stone-100">FEATURED</h2>
           </div>
           <Link href="/shop" className="text-xs tracking-[0.2em] text-stone-500 hover:text-stone-100 transition-colors hidden md:block">
