@@ -18,8 +18,7 @@ export default function HomePage() {
           <Image src="/images/logo.png" alt="" width={600} height={600} className="w-[420px] h-auto opacity-[0.21]" priority />
         </div>
 
-        {/* Hawk flipbook banner */}
-        <HawkBanner />
+
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-xl">
