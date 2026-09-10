@@ -4,53 +4,86 @@
 :root {
   --color-bone: #f0e8d8;
 
-  /* Default theme — Redtail Hawk (rufous + warm dark brown) */
-  --color-bg:           #1c0e06;   /* deep hawk-back brown */
-  --color-surface:      #2c1a0a;   /* warm dark brown */
-  --color-accent:       #c44b1a;   /* rufous / terracotta — actual redtail color */
-  --color-accent-dark:  #9e3a14;
-  --color-glow:         rgba(196, 75, 26, 0.22);
+  /* Default — Redtail hawk (rufous + warm dark brown) */
+  --color-bg:          #1c0e06;
+  --color-surface:     #2c1a0a;
+  --color-accent:      #c44b1a;
+  --color-accent-dark: #9e3a14;
+  --color-glow:        rgba(196,75,26,0.22);
+  --hero-from:         #3a1e0a;
+  --hero-mid:          #1c0e06;
+  --border-tint:       rgba(196,75,26,0.18);
+  --headline-glow:     rgba(196,75,26,0.20);
 }
 
-/* ─── The King — limo black + aggressive gold ──────────────────── */
+/* ─── THE KING — limo black + gold everywhere ──────────────────── */
 [data-theme="king"] {
-  --color-bg:           #060503;
-  --color-surface:      #110d03;
-  --color-accent:       #e8b800;   /* bright saturated gold */
-  --color-accent-dark:  #c49600;
-  --color-glow:         rgba(232, 184, 0, 0.28);
+  --color-bg:          #060503;
+  --color-surface:     #110d03;
+  --color-accent:      #e8b800;
+  --color-accent-dark: #c49600;
+  --color-glow:        rgba(232,184,0,0.30);
+  --hero-from:         #201800;
+  --hero-mid:          #0d0b00;
+  --border-tint:       rgba(232,184,0,0.22);
+  --headline-glow:     rgba(232,184,0,0.35);
 }
 
 [data-theme="king"] body {
-  background-image: radial-gradient(ellipse at 50% 30%, rgba(232,184,0,0.10) 0%, transparent 65%);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(232,184,0,0.22) 0%, rgba(232,184,0,0.06) 45%, transparent 72%);
 }
 
+/* Gold borders everywhere */
+[data-theme="king"] section,
+[data-theme="king"] footer,
+[data-theme="king"] header {
+  border-color: rgba(232,184,0,0.18) !important;
+}
+
+/* Gold headline glow */
+[data-theme="king"] h1,
+[data-theme="king"] h2 {
+  text-shadow: 0 0 60px rgba(232,184,0,0.40), 0 0 120px rgba(232,184,0,0.15);
+}
+
+/* SHOP NOW button glow */
 [data-theme="king"] .btn-accent {
-  box-shadow: 0 0 24px rgba(232,184,0,0.45), 0 0 60px rgba(232,184,0,0.18);
-  text-shadow: 0 0 12px rgba(232,184,0,0.6);
+  box-shadow: 0 0 28px rgba(232,184,0,0.55), 0 0 70px rgba(232,184,0,0.20);
   letter-spacing: 0.35em;
 }
 
-[data-theme="king"] ::-webkit-scrollbar-thumb {
-  box-shadow: 0 0 6px rgba(232,184,0,0.6);
-}
-
-/* ─── The Hunter — near-black + blood red ──────────────────────── */
+/* ─── THE HUNTER — near-black + blood red ──────────────────────── */
 [data-theme="hunter"] {
-  --color-bg:           #080101;
-  --color-surface:      #160404;
-  --color-accent:       #e01212;   /* intense blood red */
-  --color-accent-dark:  #b20000;
-  --color-glow:         rgba(224, 18, 18, 0.28);
+  --color-bg:          #080101;
+  --color-surface:     #160404;
+  --color-accent:      #e01212;
+  --color-accent-dark: #b20000;
+  --color-glow:        rgba(224,18,18,0.30);
+  --hero-from:         #1e0404;
+  --hero-mid:          #0d0202;
+  --border-tint:       rgba(224,18,18,0.22);
+  --headline-glow:     rgba(224,18,18,0.35);
 }
 
 [data-theme="hunter"] body {
-  background-image: radial-gradient(ellipse at 50% 30%, rgba(224,18,18,0.10) 0%, transparent 65%);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(224,18,18,0.20) 0%, rgba(224,18,18,0.05) 45%, transparent 72%);
+}
+
+[data-theme="hunter"] section,
+[data-theme="hunter"] footer,
+[data-theme="hunter"] header {
+  border-color: rgba(224,18,18,0.18) !important;
+}
+
+[data-theme="hunter"] h1,
+[data-theme="hunter"] h2 {
+  text-shadow: 0 0 60px rgba(224,18,18,0.40), 0 0 120px rgba(224,18,18,0.15);
 }
 
 [data-theme="hunter"] .btn-accent {
-  box-shadow: 0 0 24px rgba(224,18,18,0.45), 0 0 60px rgba(224,18,18,0.18);
-  letter-spacing: 0.35em;
+  box-shadow: 0 0 28px rgba(224,18,18,0.55), 0 0 70px rgba(224,18,18,0.20);
 }
 
 /* ─── Base styles ───────────────────────────────────────────────── */
@@ -67,11 +100,11 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ─── Accent utility classes ────────────────────────────────────── */
+/* ─── Utility classes ───────────────────────────────────────────── */
 .btn-accent {
   background-color: var(--color-accent);
   color: #f5f5f4;
-  transition: background-color 0.3s ease, box-shadow 0.5s ease;
+  transition: background-color 0.3s ease, box-shadow 0.5s ease, letter-spacing 0.5s ease;
 }
 .btn-accent:hover {
   background-color: var(--color-accent-dark);
@@ -81,9 +114,7 @@ body {
   color: #f5f5f4;
   transition: color 0.3s ease;
 }
-.product-name:hover {
-  color: var(--color-accent);
-}
+.product-name:hover { color: var(--color-accent); }
 
 .size-btn:hover {
   border-color: var(--color-accent) !important;
@@ -93,7 +124,7 @@ body {
 .nav-scrolled {
   background-color: color-mix(in srgb, var(--color-bg) 94%, transparent);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-surface) 120%, transparent);
+  border-bottom: 1px solid var(--border-tint);
   transition: background-color 0.7s ease;
 }
 
@@ -103,10 +134,9 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--color-accent);
   border-radius: 2px;
-  transition: background 0.7s ease;
 }
 
-/* ─── Hawk banner animation ─────────────────────────────────────── */
+/* ─── Hawk banner ───────────────────────────────────────────────── */
 @keyframes hawkFly {
   0%   { transform: translateX(-340px); }
   100% { transform: translateX(110vw); }

@@ -11,7 +11,7 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1c1410] via-[#0f0b08] to-[#0a0a0a]" style={{ background: 'linear-gradient(to bottom, var(--color-surface), #0f0b08, var(--color-bg))' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--hero-from), var(--hero-mid), var(--color-bg))' }} />
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
