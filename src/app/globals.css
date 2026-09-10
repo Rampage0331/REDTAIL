@@ -7,13 +7,34 @@
   --color-red-deep: #6e0e0e;
   --color-gold: #c9a84c;
   --color-bone: #e8e0d4;
+
+  /* Theme-switchable */
+  --color-accent: #8b1212;
+  --color-accent-dark: #6e0e0e;
+  --color-surface: #1c1410;
+  --color-bg: #0a0a0a;
+}
+
+[data-theme="king"] {
+  --color-accent: #c9a84c;
+  --color-accent-dark: #a88a3a;
+  --color-surface: #1a1508;
+  --color-bg: #0a0905;
+}
+
+[data-theme="hunter"] {
+  --color-accent: #cc1414;
+  --color-accent-dark: #a01010;
+  --color-surface: #1a0808;
+  --color-bg: #0f0808;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-black);
+  background-color: var(--color-bg);
   color: var(--color-bone);
+  transition: background-color 0.8s ease;
 }
 
 .font-display {
@@ -22,5 +43,10 @@ body {
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #8b1212; border-radius: 2px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
+
+@keyframes hawkFly {
+  0%   { transform: translateX(110vw); }
+  100% { transform: translateX(-280px); }
+}

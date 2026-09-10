@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getFeaturedProducts, DROP_NAME } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import HawkBanner from "@/components/HawkBanner";
 
 export default function HomePage() {
   const featured = getFeaturedProducts();
@@ -10,16 +11,19 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1c1410] via-[#0f0b08] to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1c1410] via-[#0f0b08] to-[#0a0a0a]" style={{ background: 'linear-gradient(to bottom, var(--color-surface), #0f0b08, var(--color-bg))' }} />
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <Image src="/images/logo.png" alt="" width={600} height={600} className="w-[420px] h-auto opacity-[0.06]" priority />
         </div>
 
+        {/* Hawk flipbook banner */}
+        <HawkBanner />
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-xl">
-            <p className="text-[10px] tracking-[0.4em] text-[#8b1212] mb-5">{DROP_NAME.toUpperCase()}</p>
+            <p className="text-[10px] tracking-[0.4em] mb-5" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
             <h1 className="font-display text-[clamp(3.5rem,7vw,6rem)] leading-[0.92] tracking-wide text-stone-100 mb-5">
               FORGED<br />IN<br />INSTINCT
             </h1>
@@ -28,7 +32,9 @@ export default function HomePage() {
               Built for those who move on instinct, not instruction. Redtail wears its nature plainly.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/shop" className="px-10 py-4 bg-[#8b1212] text-stone-100 text-xs tracking-[0.25em] hover:bg-[#6e0e0e] transition-colors duration-300">
+              <Link href="/shop" className="px-10 py-4 text-stone-100 text-xs tracking-[0.25em] transition-colors duration-300" style={{ backgroundColor: 'var(--color-accent)' }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--color-accent-dark)')}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'var(--color-accent)')}>
                 SHOP NOW
               </Link>
               <Link href="/story" className="px-10 py-4 border border-stone-700 text-stone-400 text-xs tracking-[0.25em] hover:border-stone-400 hover:text-stone-100 transition-colors duration-300">
@@ -78,16 +84,16 @@ export default function HomePage() {
 
       {/* STORY CALLOUT */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="bg-[#1c1410] border border-stone-800/30 p-12 md:p-20 relative overflow-hidden">
+        <div className="border border-stone-800/30 p-12 md:p-20 relative overflow-hidden" style={{ backgroundColor: 'var(--color-surface)', transition: 'background-color 0.8s ease' }}>
           <div className="relative z-10 max-w-xl">
-            <p className="text-xs tracking-[0.3em] text-[#8b1212] mb-6">THE IDEOLOGY</p>
+            <p className="text-xs tracking-[0.3em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>THE IDEOLOGY</p>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide text-stone-100 mb-6 leading-[0.95]">
               THE HAWK<br />DOESN&apos;T ASK<br />PERMISSION
             </h2>
             <p className="text-stone-400 leading-relaxed mb-4 max-w-sm">
               Redtail is built on the principle that instinct, not instruction, defines those who endure.
             </p>
-            <p className="text-xs tracking-[0.35em] text-[#8b1212] mb-3">DISCERN. COMMIT. PURSUE.</p>
+            <p className="text-xs tracking-[0.35em] mb-3" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>DISCERN. COMMIT. PURSUE.</p>
             <p className="text-xs tracking-[0.3em] text-stone-600 mb-10 italic">&ldquo;Nature is not quiet.&rdquo;</p>
             <Link href="/story" className="text-xs tracking-[0.25em] text-stone-400 hover:text-stone-100 transition-colors border-b border-stone-700 hover:border-stone-400 pb-1">
               READ THE FULL STORY →
