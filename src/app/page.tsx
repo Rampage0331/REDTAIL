@@ -15,7 +15,7 @@ export default function HomePage() {
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <Image src="/images/logo.png" alt="" width={600} height={600} className="w-[420px] h-auto opacity-[0.06]" priority />
+          <Image src="/images/logo.png" alt="" width={600} height={600} className="w-[420px] h-auto opacity-[0.21]" priority />
         </div>
 
         {/* Hawk flipbook banner */}
@@ -24,8 +24,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-xl">
             <p className="text-[10px] tracking-[0.4em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
-            <Image src="/images/logo.png" alt="Redtail" width={280} height={140} className="w-44 md:w-56 h-auto mb-8 ml-4" priority />
-            <p className="text-[10px] tracking-[0.35em] text-stone-500 mb-6 ml-4">DISCERN. COMMIT. PURSUE.</p>
+            <p className="text-[10px] tracking-[0.35em] text-stone-500 mb-6">DISCERN. COMMIT. PURSUE.</p>
 
             <div className="flex flex-wrap gap-4">
               <Link href="/shop" className="btn-accent px-10 py-4 text-stone-100 text-xs tracking-[0.25em]">
