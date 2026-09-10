@@ -1,9 +1,11 @@
 import { products, DROP_NAME } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import { ThemeSetter } from "@/components/ThemeSetter";
 
 export default function ShopPage() {
   return (
     <div className="pt-32 pb-24">
+      <ThemeSetter theme="default" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">DROP 001</p>

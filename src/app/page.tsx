@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getFeaturedProducts, DROP_NAME } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
-import HawkBanner from "@/components/HawkBanner";
+import { ThemeSetter } from "@/components/ThemeSetter";
 
 export default function HomePage() {
   const featured = getFeaturedProducts();
@@ -11,6 +11,7 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
+        <ThemeSetter theme="default" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--hero-from), var(--hero-mid), var(--color-bg))' }} />
 
         {/* Background watermark */}
