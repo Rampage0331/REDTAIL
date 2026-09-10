@@ -18,7 +18,7 @@ export const products: Product[] = [
   {
     id: "the-king",
     name: "The King",
-    description: "Gold. Dominant. Unapologetic. The King doesn't hunt — everything comes to him.",
+    description: "Built on patience, Defined by precision. When the moment comes commit completely. That's how Kings are made.",
     price: 65,
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     colors: ["Gold"],
