@@ -68,6 +68,6 @@ body {
 }
 
 @keyframes hawkFly {
-  0%   { transform: translateX(110vw); }
-  100% { transform: translateX(-280px); }
+  0%   { transform: translateX(-340px); }
+  100% { transform: translateX(110vw); }
 }
