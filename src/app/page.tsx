@@ -23,8 +23,10 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-xl">
-            <p className="text-[10px] tracking-[0.4em] mb-5" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
-            <Image src="/images/logo.png" alt="Redtail" width={520} height={260} className="w-80 md:w-[420px] h-auto mb-5" priority />
+            <p className="text-[10px] tracking-[0.4em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
+            <div className="flex justify-center mb-8">
+              <Image src="/images/logo.png" alt="Redtail" width={280} height={140} className="w-44 md:w-56 h-auto" priority />
+            </div>
             <p className="text-[10px] tracking-[0.35em] text-stone-500 mb-6">DISCERN. COMMIT. PURSUE.</p>
             <p className="text-stone-500 text-sm max-w-sm leading-relaxed mb-10">
               Built for those who move on instinct, not instruction. Redtail wears its nature plainly.
