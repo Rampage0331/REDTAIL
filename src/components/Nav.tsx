@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Nav() {
@@ -15,6 +14,7 @@ export default function Nav() {
   }, []);
 
   const links = [
+    { label: "HOME", href: "/" },
     { label: "SHOP", href: "/shop" },
     { label: "OUR STORY", href: "/story" },
     { label: "CONTACT", href: "/contact" },
@@ -23,10 +23,6 @@ export default function Nav() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "nav-scrolled" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/">
-          <Image src="/images/logo.png" alt="Redtail" width={120} height={60} className="h-10 w-auto" priority />
-        </Link>
-
         <nav className="hidden md:flex items-center gap-10">
           {links.map(({ label, href }) => (
             <Link key={href} href={href} className="text-xs tracking-[0.2em] text-stone-400 hover:text-stone-100 transition-colors duration-300">
