@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-xl">
             <p className="text-[10px] tracking-[0.4em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
-            <Image src="/images/logo.png" alt="Redtail" width={280} height={140} className="w-44 md:w-56 h-auto mb-8 ml-10" priority />
+            <Image src="/images/logo.png" alt="Redtail" width={280} height={140} className="w-44 md:w-56 h-auto mb-8 ml-4" priority />
             <p className="text-[10px] tracking-[0.35em] text-stone-500 mb-6">DISCERN. COMMIT. PURSUE.</p>
 
             <div className="flex flex-wrap gap-4">
