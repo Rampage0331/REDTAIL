@@ -4,14 +4,14 @@
 :root {
   --color-bone: #f0e8d8;
 
-  /* Default — original dark maroon */
+  /* Default — pure near-black, no brown cast */
   --color-bg:          #0a0a0a;
-  --color-surface:     #1c1410;
+  --color-surface:     #111111;
   --color-accent:      #8b1212;
   --color-accent-dark: #6e0e0e;
   --color-glow:        rgba(139,18,18,0.22);
-  --hero-from:         #1c1410;
-  --hero-mid:          #0f0b08;
+  --hero-from:         #111111;
+  --hero-mid:          #080808;
   --border-tint:       rgba(139,18,18,0.18);
   --headline-glow:     rgba(139,18,18,0.20);
 }
