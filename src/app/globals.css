@@ -4,16 +4,17 @@
 :root {
   --color-bone: #f0e8d8;
 
-  /* Default — Redtail hawk (rufous + warm dark brown) */
-  --color-bg:          #1c0e06;
-  --color-surface:     #2c1a0a;
-  --color-accent:      #c44b1a;
-  --color-accent-dark: #9e3a14;
-  --color-glow:        rgba(196,75,26,0.22);
-  --hero-from:         #3a1e0a;
-  --hero-mid:          #1c0e06;
-  --border-tint:       rgba(196,75,26,0.18);
-  --headline-glow:     rgba(196,75,26,0.20);
+  /* Default — Real Redtail Hawk photo colors */
+  --color-bg:          #190c04;   /* near-black warm brown — darkest wing feathers */
+  --color-surface:     #30190a;   /* rich chocolate brown — main wing body */
+  --color-accent:      #c44818;   /* rufous brick-red — the iconic tail */
+  --color-accent-dark: #9e3810;
+  --color-highlight:   #c8a870;   /* buff cream — belly feathers */
+  --color-glow:        rgba(196,72,24,0.22);
+  --hero-from:         #3e2210;   /* deep wing brown — hero top */
+  --hero-mid:          #1e0e05;
+  --border-tint:       rgba(196,72,24,0.18);
+  --headline-glow:     rgba(196,72,24,0.20);
 }
 
 /* ─── THE KING — limo black + gold everywhere ──────────────────── */
