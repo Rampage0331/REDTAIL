@@ -89,7 +89,10 @@
 /* ─── Default theme radial bloom ───────────────────────────────── */
 body {
   background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(139,18,18,0.15) 0%, rgba(139,18,18,0.04) 45%, transparent 72%);
+    radial-gradient(ellipse at 50% 0%,   rgba(139,18,18,0.32) 0%, rgba(139,18,18,0.10) 40%, transparent 68%),
+    radial-gradient(ellipse at 0% 50%,   rgba(139,18,18,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 50%, rgba(139,18,18,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(139,18,18,0.14) 0%, transparent 55%);
 }
 
 /* ─── Base styles ───────────────────────────────────────────────── */
