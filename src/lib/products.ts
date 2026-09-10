@@ -16,19 +16,6 @@ export const DROP_NAME = "Genesis//001 The Hunt Begins";
 
 export const products: Product[] = [
   {
-    id: "the-king",
-    name: "The King",
-    description: "Built on patience, Defined by precision. When the moment comes, commit completely. That's how Kings are made.",
-    price: 65,
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    colors: ["Gold"],
-    featured: true,
-    collection: "Genesis//001",
-    drop: "Genesis//001 The Hunt Begins",
-    details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
-    image: "/images/the-king.png",
-  },
-  {
     id: "the-hunter",
     name: "The Hunter",
     description: "Red. Patient. Relentless. The Hunter moves when the moment demands — not a second before.",
@@ -40,6 +27,19 @@ export const products: Product[] = [
     drop: "Genesis//001 The Hunt Begins",
     details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
     image: "/images/the-hunter.png",
+  },
+  {
+    id: "the-king",
+    name: "The King",
+    description: "Built on patience, Defined by precision. When the moment comes, commit completely. That's how Kings are made.",
+    price: 65,
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    colors: ["Gold"],
+    featured: true,
+    collection: "Genesis//001",
+    drop: "Genesis//001 The Hunt Begins",
+    details: ["100% heavyweight cotton", "Relaxed fit", "Pre-washed for softness", "Screenprinted graphic"],
+    image: "/images/the-king.png",
   },
 ];
 
