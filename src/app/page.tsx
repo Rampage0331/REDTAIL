@@ -83,15 +83,18 @@ export default function HomePage() {
           <div className="relative z-10 max-w-xl">
             <p className="text-xs tracking-[0.3em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>THE IDEOLOGY</p>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide text-stone-100 mb-6 leading-[0.95]">
-              THE HAWK<br />DOESN&apos;T ASK<br />PERMISSION
+              QUIET AUTHORITY
             </h2>
             <p className="text-stone-400 leading-relaxed mb-4 max-w-sm">
-              Redtail is built on the principle that instinct, not instruction, defines those who endure.
+              The red-tailed hawk moves with patience, precision, and quiet authority. It does not waste energy trying to be seen. It rises above the landscape, studies what lies beneath it, and waits for the right moment to act.
             </p>
-            <p className="text-xs tracking-[0.35em] mb-3" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>DISCERN. COMMIT. PURSUE.</p>
-            <p className="text-xs tracking-[0.3em] text-stone-600 mb-10 italic">&ldquo;Nature is not quiet.&rdquo;</p>
+            <p className="text-stone-400 leading-relaxed mb-8 max-w-sm">
+              Every movement has purpose. Every decision is measured. When it commits, it does so completely.
+            </p>
+            <p className="text-stone-100 text-sm tracking-[0.15em] mb-6">REDTAIL IS BUILT ON THE SAME CODE.</p>
+            <p className="text-xs tracking-[0.35em] mb-8" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>DISCERN. COMMIT. PURSUE.</p>
             <Link href="/story" className="text-xs tracking-[0.25em] text-stone-400 hover:text-stone-100 transition-colors border-b border-stone-700 hover:border-stone-400 pb-1">
-              READ THE FULL STORY →
+              OUR STORY →
             </Link>
           </div>
         </div>
