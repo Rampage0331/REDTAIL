@@ -32,9 +32,7 @@ export default function HomePage() {
               Built for those who move on instinct, not instruction. Redtail wears its nature plainly.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/shop" className="px-10 py-4 text-stone-100 text-xs tracking-[0.25em] transition-colors duration-300" style={{ backgroundColor: 'var(--color-accent)' }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--color-accent-dark)')}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'var(--color-accent)')}>
+              <Link href="/shop" className="btn-accent px-10 py-4 text-stone-100 text-xs tracking-[0.25em]">
                 SHOP NOW
               </Link>
               <Link href="/story" className="px-10 py-4 border border-stone-700 text-stone-400 text-xs tracking-[0.25em] hover:border-stone-400 hover:text-stone-100 transition-colors duration-300">

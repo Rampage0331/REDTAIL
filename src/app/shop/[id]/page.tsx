@@ -77,10 +77,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 {product.sizes.map((s) => (
                   <button
                     key={s}
-                    className="w-14 h-14 border border-stone-700 text-xs tracking-widest text-stone-400 transition-colors"
-                    style={{ ['--hover-accent' as string]: 'var(--color-accent)' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--color-accent)'; (e.currentTarget as HTMLButtonElement).style.color = '#f5f5f4'; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = ''; (e.currentTarget as HTMLButtonElement).style.color = ''; }}
+                    className="size-btn w-14 h-14 border border-stone-700 text-xs tracking-widest text-stone-400 transition-colors"
                   >
                     {s}
                   </button>
