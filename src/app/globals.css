@@ -1,40 +1,65 @@
 @import "tailwindcss";
 
+/* ─── Base palette ─────────────────────────────────────────────── */
 :root {
-  --color-black: #0a0a0a;
-  --color-earth: #1c1410;
-  --color-red: #8b1212;
-  --color-red-deep: #6e0e0e;
-  --color-gold: #c9a84c;
-  --color-bone: #e8e0d4;
+  --color-bone: #f0e8d8;
 
-  /* Theme-switchable */
-  --color-accent: #8b1212;
-  --color-accent-dark: #6e0e0e;
-  --color-surface: #1c1410;
-  --color-bg: #0a0a0a;
+  /* Default theme — Redtail Hawk (rufous + warm dark brown) */
+  --color-bg:           #1c0e06;   /* deep hawk-back brown */
+  --color-surface:      #2c1a0a;   /* warm dark brown */
+  --color-accent:       #c44b1a;   /* rufous / terracotta — actual redtail color */
+  --color-accent-dark:  #9e3a14;
+  --color-glow:         rgba(196, 75, 26, 0.22);
 }
 
+/* ─── The King — limo black + aggressive gold ──────────────────── */
 [data-theme="king"] {
-  --color-accent: #c9a84c;
-  --color-accent-dark: #a88a3a;
-  --color-surface: #1a1508;
-  --color-bg: #0a0905;
+  --color-bg:           #060503;
+  --color-surface:      #110d03;
+  --color-accent:       #e8b800;   /* bright saturated gold */
+  --color-accent-dark:  #c49600;
+  --color-glow:         rgba(232, 184, 0, 0.28);
 }
 
+[data-theme="king"] body {
+  background-image: radial-gradient(ellipse at 50% 30%, rgba(232,184,0,0.10) 0%, transparent 65%);
+}
+
+[data-theme="king"] .btn-accent {
+  box-shadow: 0 0 24px rgba(232,184,0,0.45), 0 0 60px rgba(232,184,0,0.18);
+  text-shadow: 0 0 12px rgba(232,184,0,0.6);
+  letter-spacing: 0.35em;
+}
+
+[data-theme="king"] ::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 6px rgba(232,184,0,0.6);
+}
+
+/* ─── The Hunter — near-black + blood red ──────────────────────── */
 [data-theme="hunter"] {
-  --color-accent: #cc1414;
-  --color-accent-dark: #a01010;
-  --color-surface: #1a0808;
-  --color-bg: #0f0808;
+  --color-bg:           #080101;
+  --color-surface:      #160404;
+  --color-accent:       #e01212;   /* intense blood red */
+  --color-accent-dark:  #b20000;
+  --color-glow:         rgba(224, 18, 18, 0.28);
 }
 
+[data-theme="hunter"] body {
+  background-image: radial-gradient(ellipse at 50% 30%, rgba(224,18,18,0.10) 0%, transparent 65%);
+}
+
+[data-theme="hunter"] .btn-accent {
+  box-shadow: 0 0 24px rgba(224,18,18,0.45), 0 0 60px rgba(224,18,18,0.18);
+  letter-spacing: 0.35em;
+}
+
+/* ─── Base styles ───────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-bone);
-  transition: background-color 0.8s ease;
+  transition: background-color 0.7s ease, background-image 0.7s ease;
 }
 
 .font-display {
@@ -42,13 +67,11 @@ body {
   letter-spacing: 0.05em;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
-
+/* ─── Accent utility classes ────────────────────────────────────── */
 .btn-accent {
   background-color: var(--color-accent);
-  transition: background-color 0.3s ease;
+  color: #f5f5f4;
+  transition: background-color 0.3s ease, box-shadow 0.5s ease;
 }
 .btn-accent:hover {
   background-color: var(--color-accent-dark);
@@ -67,6 +90,23 @@ body {
   color: #f5f5f4;
 }
 
+.nav-scrolled {
+  background-color: color-mix(in srgb, var(--color-bg) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-surface) 120%, transparent);
+  transition: background-color 0.7s ease;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: background 0.7s ease;
+}
+
+/* ─── Hawk banner animation ─────────────────────────────────────── */
 @keyframes hawkFly {
   0%   { transform: translateX(-340px); }
   100% { transform: translateX(110vw); }
