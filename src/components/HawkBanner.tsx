@@ -1,30 +1,31 @@
 'use client';
-import Image from 'next/image';
 
 export default function HawkBanner() {
   return (
     <div
-      className="absolute inset-x-0 top-0 h-56 pointer-events-none overflow-hidden"
-      style={{ zIndex: 6 }}
+      className="absolute inset-x-0 top-0 pointer-events-none"
+      style={{ zIndex: 6, height: '340px' }}
     >
       <div
         style={{
           animation: 'hawkFly 16s linear infinite',
           position: 'absolute',
-          top: '32px',
+          top: '24px',
           willChange: 'transform',
         }}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/hawk.png"
           alt=""
-          width={280}
-          height={280}
           style={{
+            width: '300px',
+            height: 'auto',
+            display: 'block',
             mixBlendMode: 'screen',
-            opacity: 0.92,
+            animation: 'hawkBob 1.4s ease-in-out infinite',
+            willChange: 'transform',
           }}
-          priority
         />
       </div>
     </div>
