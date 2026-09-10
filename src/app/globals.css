@@ -4,16 +4,16 @@
 :root {
   --color-bone: #f0e8d8;
 
-  /* Default — Redtail hawk */
-  --color-bg:          #1c0e06;
-  --color-surface:     #2c1a0a;
-  --color-accent:      #c44b1a;
-  --color-accent-dark: #9e3a14;
-  --color-glow:        rgba(196,75,26,0.22);
-  --hero-from:         #3a1e0a;
-  --hero-mid:          #1c0e06;
-  --border-tint:       rgba(196,75,26,0.18);
-  --headline-glow:     rgba(196,75,26,0.20);
+  /* Default — original dark maroon */
+  --color-bg:          #0a0a0a;
+  --color-surface:     #1c1410;
+  --color-accent:      #8b1212;
+  --color-accent-dark: #6e0e0e;
+  --color-glow:        rgba(139,18,18,0.22);
+  --hero-from:         #1c1410;
+  --hero-mid:          #0f0b08;
+  --border-tint:       rgba(139,18,18,0.18);
+  --headline-glow:     rgba(139,18,18,0.20);
 }
 
 /* ─── THE KING — limo black + gold everywhere ──────────────────── */
