@@ -83,15 +83,14 @@ export default function HomePage() {
           <div className="relative z-10 max-w-xl">
             <p className="text-xs tracking-[0.3em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>THE IDEOLOGY</p>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide text-stone-100 mb-6 leading-[0.95]">
-              QUIET AUTHORITY
+              DELIBERATE BY DESIGN
             </h2>
             <p className="text-stone-400 leading-relaxed mb-4 max-w-sm">
-              The red-tailed hawk moves with patience, precision, and quiet authority. It does not waste energy trying to be seen. It rises above the landscape, studies what lies beneath it, and waits for the right moment to act.
+              The red-tailed hawk moves with patience and precision. It observes, adapts, and waits for the right moment to act. No wasted movement. No hesitation once it commits.
             </p>
             <p className="text-stone-400 leading-relaxed mb-8 max-w-sm">
-              Every movement has purpose. Every decision is measured. When it commits, it does so completely.
+              Redtail follows the same principle. Every graphic, material, and detail is chosen with intention.
             </p>
-            <p className="text-stone-100 text-sm tracking-[0.15em] mb-6">REDTAIL IS BUILT ON THE SAME CODE.</p>
             <p className="text-xs tracking-[0.35em] mb-8" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>DISCERN. COMMIT. PURSUE.</p>
             <Link href="/story" className="text-xs tracking-[0.25em] text-stone-400 hover:text-stone-100 transition-colors border-b border-stone-700 hover:border-stone-400 pb-1">
               OUR STORY →
