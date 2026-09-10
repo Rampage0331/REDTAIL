@@ -85,11 +85,12 @@ export default function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl tracking-wide text-stone-100 mb-6 leading-[0.95]">
               DELIBERATE BY DESIGN
             </h2>
-            <p className="text-stone-400 leading-relaxed mb-4 max-w-sm">
-              The red-tailed hawk moves with patience and precision. It observes, adapts, and waits for the right moment to act. No wasted movement. No hesitation once it commits.
-            </p>
             <p className="text-stone-400 leading-relaxed mb-8 max-w-sm">
-              Redtail follows the same principle. Every graphic, material, and detail is chosen with intention.
+              The red-tailed hawk moves with patience and precision. It discerns the opportunity, commits when the moment is right, and pursues with absolute focus. No wasted movement. No hesitation.
+            </p>
+            <p className="text-stone-100 text-sm tracking-[0.15em] mb-3">REDTAIL FOLLOWS THE SAME PRINCIPLE.</p>
+            <p className="text-stone-400 leading-relaxed mb-8 max-w-sm">
+              Every graphic, material, and detail is chosen with intention.
             </p>
             <p className="text-xs tracking-[0.35em] mb-8" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>DISCERN. COMMIT. PURSUE.</p>
             <Link href="/story" className="text-xs tracking-[0.25em] text-stone-400 hover:text-stone-100 transition-colors border-b border-stone-700 hover:border-stone-400 pb-1">
