@@ -86,6 +86,12 @@
   box-shadow: 0 0 28px rgba(224,18,18,0.55), 0 0 70px rgba(224,18,18,0.20);
 }
 
+/* ─── Default theme radial bloom ───────────────────────────────── */
+body {
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(139,18,18,0.15) 0%, rgba(139,18,18,0.04) 45%, transparent 72%);
+}
+
 /* ─── Base styles ───────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 

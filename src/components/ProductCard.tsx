@@ -24,6 +24,12 @@ export default function ProductCard({ product }: { product: Product }) {
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{ backgroundColor: 'color-mix(in srgb, var(--color-accent) 8%, transparent)' }}
         />
+        {/* Accent border on hover */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{ border: '1px solid var(--color-accent)' }}
+        />
+
         {product.collection && (
           <div className="absolute top-4 left-4">
             <span className="text-[10px] tracking-[0.2em] text-stone-400 bg-[#0a0a0a]/80 px-3 py-1.5">

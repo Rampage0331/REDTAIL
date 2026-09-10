@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProductById, products } from "@/lib/products";
 import { ThemeSetter } from "@/components/ThemeSetter";
+import NotifyButton from "@/components/NotifyButton";
 import type { Theme } from "@/context/ThemeContext";
 
 export function generateStaticParams() {
@@ -85,10 +86,8 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               </div>
             </div>
 
-            {/* Buy — disabled until Stripe is configured */}
-            <div className="w-full py-5 bg-stone-800 text-stone-500 text-xs tracking-[0.3em] text-center cursor-not-allowed">
-              SHOP COMING SOON
-            </div>
+            {/* Buy — email capture until Stripe is configured */}
+            <NotifyButton />
 
             {/* Details */}
             {product.details && (
