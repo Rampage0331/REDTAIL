@@ -13,8 +13,8 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
         <ThemeSetter theme="default" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--hero-from), var(--hero-mid), var(--color-bg))' }} />
-        {/* Centered radial glow — matches king/hunter drama */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 35%, color-mix(in srgb, var(--color-accent) 7%, transparent) 0%, transparent 65%)' }} />
+        {/* Bottom glow — bleeds into page below */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 80% 40% at 50% 100%, rgba(139,18,18,0.13) 0%, rgba(139,18,18,0.04) 50%, rgba(139,18,18,0) 100%)' }} />
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
