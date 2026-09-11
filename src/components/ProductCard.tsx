@@ -4,6 +4,9 @@ import Image from "next/image";
 import { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const isKing = product.id === 'the-king';
+  const hoverAccent = isKing ? '#e8b800' : 'var(--color-accent)';
+
   return (
     <Link href={`/shop/${product.id}`} className="group block">
       <div
@@ -22,12 +25,12 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{ backgroundColor: 'color-mix(in srgb, var(--color-accent) 8%, transparent)' }}
+          style={{ backgroundColor: `color-mix(in srgb, ${hoverAccent} 8%, transparent)` }}
         />
         {/* Accent border on hover */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ border: '1px solid var(--color-accent)' }}
+          style={{ border: `1px solid ${hoverAccent}` }}
         />
 
         {product.collection && (
@@ -44,7 +47,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <h3
             className="text-stone-100 font-medium tracking-wide transition-colors duration-300"
             style={{ ['--tw-text-opacity' as string]: '1' }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-accent)')}
+            onMouseEnter={e => (e.currentTarget.style.color = hoverAccent)}
             onMouseLeave={e => (e.currentTarget.style.color = '')}
           >
             {product.name}
