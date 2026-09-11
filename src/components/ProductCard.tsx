@@ -43,7 +43,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="flex items-end justify-between">
         <div>
-          <p className="text-xs tracking-[0.15em] text-stone-500 mb-1">{product.colors.join(" / ")}</p>
+          <p className="text-sm tracking-[0.15em] text-stone-500 mb-1">{product.colors.join(" / ")}</p>
           <h3
             className="text-stone-100 font-medium tracking-wide transition-colors duration-300"
             style={{ ['--tw-text-opacity' as string]: '1' }}
@@ -53,7 +53,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.name}
           </h3>
         </div>
-        <p className="text-stone-300 font-medium">${product.price}</p>
+        <p className="text-stone-300 font-medium text-lg">${product.price}</p>
       </div>
     </Link>
   );
