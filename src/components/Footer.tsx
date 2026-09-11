@@ -9,7 +9,6 @@ export default function Footer() {
           <div>
             <Image src="/images/logo.png" alt="Redtail" width={140} height={70} className="h-14 w-auto mb-4" />
             <p className="text-xs tracking-[0.3em] text-stone-500 mb-1">DISCERN. COMMIT. PURSUE.</p>
-            <p className="text-stone-600 text-sm italic">Nature is not quiet.</p>
           </div>
 
           <div>
