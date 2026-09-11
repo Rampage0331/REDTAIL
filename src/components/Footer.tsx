@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="mt-32" style={{ backgroundColor: 'var(--color-bg)', transition: 'background-color 0.7s ease' }}>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          <div>
+          <div className="flex flex-col items-center text-center">
             <Image src="/images/logo.png" alt="Redtail" width={140} height={70} className="h-14 w-auto mb-4" />
             <p className="text-xs tracking-[0.3em] text-stone-500 mb-1">DISCERN. COMMIT. PURSUE.</p>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
 
         <div className="border-t border-stone-800/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-stone-600 text-xs tracking-widest">© {new Date().getFullYear()} REDTAIL. ALL RIGHTS RESERVED.</p>
-          <p className="text-stone-700 text-xs tracking-[0.3em]">REDTAIL</p>
+          <p className="text-stone-700 text-xs tracking-[0.3em]">REDTAIL BRAND COMPANY LLC</p>
         </div>
       </div>
     </footer>
