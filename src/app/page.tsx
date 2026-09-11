@@ -12,9 +12,8 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
         <ThemeSetter theme="default" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--hero-from), var(--hero-mid), var(--color-bg))' }} />
-        {/* Bottom glow — bleeds into page below */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 90% 45% at 50% 100%, rgba(139,18,18,0.18) 0%, rgba(139,18,18,0.06) 50%, rgba(139,18,18,0) 100%)' }} />
+        {/* Hero gradient — transparent at bottom so body canvas bleeds through */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #111111 0%, #0a0a0a 50%, rgba(10,10,10,0.6) 78%, rgba(10,10,10,0) 100%)' }} />
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
@@ -44,13 +43,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEAM GLOW — bridges hero bottom to featured, bypasses overflow-hidden */}
-      <div className="relative h-0 w-full pointer-events-none" style={{ overflow: 'visible' }}>
-        <div className="absolute inset-x-0 top-0 -translate-y-1/2 h-72"
-          style={{ background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(139,18,18,0.22) 0%, rgba(139,18,18,0.08) 45%, rgba(139,18,18,0) 80%)' }} />
-      </div>
-
-      {/* FEATURED */}
+      {/* FEATURED */
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
           <p className="text-sm tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
@@ -62,7 +55,7 @@ export default function HomePage() {
       </section>
 
       {/* BRAND STRIP */}
-      <section className="border-y border-stone-800/50 py-20">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {[
             { label: "01 — MATERIAL",     value: "PREMIUM COTTON",     sub: "Soft, structured, and made for everyday wear." },
