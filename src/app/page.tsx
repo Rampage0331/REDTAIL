@@ -64,9 +64,9 @@ export default function HomePage() {
       <section className="border-y border-stone-800/50 py-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {[
-            { label: "MATERIAL", value: "Heavyweight Cotton", sub: "Pre-washed. Built to outlast." },
-            { label: "ORIGIN", value: "American-Made", sub: "Crafted with intention." },
-            { label: "ETHOS", value: "Primitive Instinct", sub: "Wear your nature." },
+            { label: "01 — MATERIAL",     value: "PREMIUM COTTON",     sub: "Soft, structured, and made for everyday wear." },
+            { label: "02 — CONSTRUCTION", value: "SIGNATURE DETAILS",  sub: "Distinct graphics, contrast hems, and considered finishes." },
+            { label: "03 — FIT",          value: "CLASSIC FIT",        sub: "Clean through the body with room to move." },
           ].map(({ label, value, sub }) => (
             <div key={label}>
               <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">{label}</p>
