@@ -14,7 +14,7 @@ export default function HomePage() {
         <ThemeSetter theme="default" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--hero-from), var(--hero-mid), var(--color-bg))' }} />
         {/* Bottom glow — bleeds into page below */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 80% 40% at 50% 100%, rgba(139,18,18,0.13) 0%, rgba(139,18,18,0.04) 50%, rgba(139,18,18,0) 100%)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 90% 55% at 50% 100%, rgba(139,18,18,0.25) 0%, rgba(139,18,18,0.10) 45%, rgba(139,18,18,0.02) 70%, rgba(139,18,18,0) 100%)' }} />
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
