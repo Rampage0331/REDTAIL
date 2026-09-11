@@ -46,16 +46,11 @@ export default function HomePage() {
 
       {/* FEATURED */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
-            <h2 className="font-display text-4xl tracking-wide text-stone-100">FEATURED</h2>
-          </div>
-          <Link href="/shop" className="text-xs tracking-[0.2em] text-stone-500 hover:text-stone-100 transition-colors hidden md:block">
-            VIEW ALL →
-          </Link>
+        <div className="text-center mb-12">
+          <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
+          <h2 className="font-display text-4xl tracking-wide text-stone-100">FEATURED</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {featured.map((p) => <ProductCard key={p.id} product={p} />)}
         </div>
       </section>
