@@ -77,28 +77,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STORY CALLOUT */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="border border-stone-800/30 p-12 md:p-20 relative overflow-hidden" style={{ backgroundColor: 'var(--color-surface)', transition: 'background-color 0.8s ease' }}>
-          <div className="relative z-10 max-w-xl">
-            <p className="text-xs tracking-[0.3em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>THE IDEOLOGY</p>
-            <h2 className="font-display text-4xl md:text-5xl tracking-wide text-stone-100 mb-6 leading-[0.95]">
-              DELIBERATE BY DESIGN
-            </h2>
-            <p className="text-stone-400 leading-relaxed mb-8 max-w-sm">
-              The red-tailed hawk moves with patience and precision. It discerns the opportunity, commits when the moment is right, and pursues with absolute focus. No wasted movement. No hesitation.
-            </p>
-            <p className="text-stone-100 text-sm tracking-[0.15em] mb-3">REDTAIL FOLLOWS THE SAME PRINCIPLE.</p>
-            <p className="text-stone-400 leading-relaxed mb-8 max-w-sm">
-              Every graphic, material, and detail is chosen with intention.
-            </p>
-            <p className="text-xs tracking-[0.35em] mb-8" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>DISCERN. COMMIT. PURSUE.</p>
-            <Link href="/story" className="text-xs tracking-[0.25em] text-stone-400 hover:text-stone-100 transition-colors border-b border-stone-700 hover:border-stone-400 pb-1">
-              OUR STORY →
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
