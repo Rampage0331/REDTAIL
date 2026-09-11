@@ -30,13 +30,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
           {/* Product image */}
-          <div className="aspect-[3/4] relative overflow-hidden" style={{ backgroundColor: 'var(--color-surface)', transition: 'background-color 0.8s ease' }}>
+          <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: 'var(--color-surface)', transition: 'background-color 0.8s ease' }}>
             {product.image ? (
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             ) : (

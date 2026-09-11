@@ -7,7 +7,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link href={`/shop/${product.id}`} className="group block">
       <div
-        className="relative aspect-[3/4] overflow-hidden mb-5 flex items-center justify-center"
+        className="relative aspect-video overflow-hidden mb-5 flex items-center justify-center"
         style={{ backgroundColor: 'var(--color-surface)', transition: 'background-color 0.8s ease' }}
       >
         {product.image ? (
@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-contain group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
           <p className="text-stone-700 text-xs tracking-widest">PHOTO COMING SOON</p>
