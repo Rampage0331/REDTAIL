@@ -46,10 +46,10 @@ export default function HomePage() {
       {/* FEATURED */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
-          <p className="text-sm tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
-          <h2 className="font-display text-5xl tracking-wide text-stone-100">FEATURED</h2>
+          <p className="text-base tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
+          <h2 className="font-display text-6xl tracking-wide text-stone-100">FEATURED</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {featured.map((p) => <ProductCard key={p.id} product={p} />)}
         </div>
       </section>
