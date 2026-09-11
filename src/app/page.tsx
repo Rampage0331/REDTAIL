@@ -43,7 +43,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED */
+      {/* FEATURED */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
           <p className="text-sm tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
