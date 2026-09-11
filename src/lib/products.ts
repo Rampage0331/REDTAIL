@@ -41,7 +41,7 @@ export const products: Product[] = [
     description: "Built on patience. Defined by precision. When the moment comes, commit completely. That's how Kings are made.",
     price: 65,
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    colors: ["Black // Gold"],
+    colors: ["Limo Black // Gold"],
     featured: true,
     collection: "Genesis//001",
     drop: "Genesis//001 The Hunt Begins",
