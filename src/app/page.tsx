@@ -14,7 +14,7 @@ export default function HomePage() {
         <ThemeSetter theme="default" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, var(--hero-from), var(--hero-mid), var(--color-bg))' }} />
         {/* Bottom glow — bleeds into page below */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 90% 45% at 50% 100%, rgba(139,18,18,0.18) 0%, rgba(139,18,18,0.06) 50%, rgba(139,18,18,0) 100%)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 45% at 50% 100%, rgba(139,18,18,0.20) 0%, rgba(139,18,18,0.07) 50%, rgba(139,18,18,0) 100%)' }} />
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* SEAM GLOW — bridges hero bottom to featured, bypasses overflow-hidden */}
       <div className="relative h-0 w-full pointer-events-none" style={{ overflow: 'visible' }}>
         <div className="absolute inset-x-0 top-0 -translate-y-1/2 h-72"
-          style={{ background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(139,18,18,0.22) 0%, rgba(139,18,18,0.08) 45%, rgba(139,18,18,0) 80%)' }} />
+          style={{ background: 'radial-gradient(ellipse 55% 100% at 50% 50%, rgba(139,18,18,0.20) 0%, rgba(139,18,18,0.07) 45%, rgba(139,18,18,0) 80%)' }} />
       </div>
 
       {/* FEATURED */}
