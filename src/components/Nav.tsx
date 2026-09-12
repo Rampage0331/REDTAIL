@@ -22,10 +22,10 @@ export default function Nav() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "nav-scrolled" : "bg-transparent"}`}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-end">
+      <div className="max-w-7xl mx-auto px-6 xl:px-12 py-4 xl:py-6 flex items-center justify-end">
         <nav className="hidden md:flex items-center gap-10">
           {links.map(({ label, href }) => (
-            <Link key={href} href={href} className="text-xs tracking-[0.2em] text-stone-400 hover:text-stone-100 transition-colors duration-300">
+            <Link key={href} href={href} className="text-xs xl:text-sm tracking-[0.2em] text-stone-400 hover:text-stone-100 transition-colors duration-300">
               {label}
             </Link>
           ))}

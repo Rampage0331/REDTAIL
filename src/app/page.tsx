@@ -23,15 +23,15 @@ export default function HomePage() {
 
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-xl">
-            <p className="text-[10px] tracking-[0.4em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
-            <p className="text-[10px] tracking-[0.35em] text-stone-500 mb-6">DISCERN. COMMIT. PURSUE.</p>
+          <div className="max-w-xl xl:max-w-2xl">
+            <p className="text-[10px] xl:text-xs tracking-[0.4em] mb-6" style={{ color: 'var(--color-accent)', transition: 'color 0.8s ease' }}>{DROP_NAME.toUpperCase()}</p>
+            <p className="text-[10px] xl:text-xs tracking-[0.35em] text-stone-500 mb-6">DISCERN. COMMIT. PURSUE.</p>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/shop" className="btn-accent px-10 py-4 text-stone-100 text-xs tracking-[0.25em]">
+              <Link href="/shop" className="btn-accent px-10 py-4 text-stone-100 text-xs xl:text-sm tracking-[0.25em]">
                 SHOP NOW
               </Link>
-              <Link href="/story" className="px-10 py-4 border border-stone-700 text-stone-400 text-xs tracking-[0.25em] hover:border-stone-400 hover:text-stone-100 transition-colors duration-300">
+              <Link href="/story" className="px-10 py-4 border border-stone-700 text-stone-400 text-xs xl:text-sm tracking-[0.25em] hover:border-stone-400 hover:text-stone-100 transition-colors duration-300">
                 OUR STORY
               </Link>
             </div>
@@ -47,9 +47,9 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
           <p className="text-base tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
-          <h2 className="font-display text-6xl tracking-wide text-stone-100">FEATURED</h2>
+          <h2 className="font-display text-6xl xl:text-7xl 2xl:text-8xl tracking-wide text-stone-100">FEATURED</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-16 max-w-5xl xl:max-w-6xl mx-auto">
           {featured.map((p) => <ProductCard key={p.id} product={p} />)}
         </div>
       </section>
@@ -63,9 +63,9 @@ export default function HomePage() {
             { label: "03 — FIT",          value: "WEAR IT YOUR WAY",   sub: "clean fit / oversized look" },
           ].map(({ label, value, sub }) => (
             <div key={label}>
-              <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">{label}</p>
-              <p className="font-display text-2xl tracking-wider text-stone-100 mb-2">{value}</p>
-              <p className="text-stone-500 text-sm">{sub}</p>
+              <p className="text-xs xl:text-sm tracking-[0.3em] text-stone-600 mb-3">{label}</p>
+              <p className="font-display text-2xl xl:text-3xl tracking-wider text-stone-100 mb-2">{value}</p>
+              <p className="text-stone-500 text-sm xl:text-base">{sub}</p>
             </div>
           ))}
         </div>

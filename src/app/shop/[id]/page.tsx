@@ -53,7 +53,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 {product.collection.toUpperCase()}
               </p>
             )}
-            <h1 className="font-display text-4xl md:text-5xl tracking-wide text-stone-100 mb-4 leading-[0.95]">
+            <h1 className="font-display text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl tracking-wide text-stone-100 mb-4 leading-[0.95]">
               {product.name.toUpperCase()}
             </h1>
             <p className="text-xl text-stone-300 mb-6">${product.price}</p>
