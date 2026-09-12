@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" });
@@ -17,11 +18,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`}>
       <body className="font-sans antialiased">
-        <ThemeProvider>
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <CartProvider>
+          <ThemeProvider>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </CartProvider>
       </body>
     </html>
   );

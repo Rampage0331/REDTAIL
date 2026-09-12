@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProductById, products } from "@/lib/products";
 import { ThemeSetter } from "@/components/ThemeSetter";
-import NotifyButton from "@/components/NotifyButton";
+import AddToCartButton from "@/components/AddToCartButton";
 import type { Theme } from "@/context/ThemeContext";
 
 export function generateStaticParams() {
@@ -59,35 +59,14 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <p className="text-xl text-stone-300 mb-6">${product.price}</p>
             <p className="text-stone-400 leading-relaxed mb-10">{product.description}</p>
 
-            {/* Colors */}
-            <div className="mb-8">
-              <p className="text-xs tracking-[0.2em] text-stone-600 mb-4">COLOR</p>
-              <div className="flex flex-wrap gap-3">
-                {product.colors.map((c) => (
-                  <button key={c} className="px-5 py-2 border border-stone-700 text-xs tracking-widest text-stone-400 hover:border-stone-400 hover:text-stone-100 transition-colors">
-                    {c.toUpperCase()}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Sizes */}
-            <div className="mb-10">
-              <p className="text-xs tracking-[0.2em] text-stone-600 mb-4">SIZE</p>
-              <div className="flex flex-wrap gap-2">
-                {product.sizes.map((s) => (
-                  <button
-                    key={s}
-                    className="size-btn w-14 h-14 border border-stone-700 text-xs tracking-widest text-stone-400 transition-colors"
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Buy — email capture until Stripe is configured */}
-            <NotifyButton />
+            <AddToCartButton product={{
+              id: product.id,
+              name: product.name,
+              price: product.price,
+              image: product.image,
+              colors: product.colors,
+              sizes: product.sizes,
+            }} />
 
             {/* Details */}
             {product.details && (
