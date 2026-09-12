@@ -30,9 +30,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-stone-800/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-stone-800/50 pt-8 flex justify-center">
           <p className="text-stone-600 text-xs tracking-widest">© {new Date().getFullYear()} REDTAIL BRAND COMPANY LLC. ALL RIGHTS RESERVED.</p>
-          <p className="text-stone-700 text-xs tracking-[0.3em]">REDTAIL</p>
         </div>
       </div>
     </footer>
