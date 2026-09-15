@@ -65,7 +65,7 @@ export default function CartPage() {
                 <span className="text-stone-300 font-medium text-xl">${totalPrice}</span>
               </div>
               <p className="text-stone-600 text-xs tracking-[0.2em] w-full max-w-sm text-right">
-                SHIPPING INCLUDED — NO SURPRISES AT CHECKOUT
+                MADE TO ORDER — SHIPS AFTER THE DROP CLOSES. SHIPPING INCLUDED.
               </p>
               <div className="border-t border-stone-800/50 w-full max-w-sm" />
               <button
@@ -75,6 +75,9 @@ export default function CartPage() {
                 CHECKOUT — COMING SOON
               </button>
               <p className="text-stone-700 text-xs tracking-widest">Store launches soon. Your cart is saved.</p>
+              <Link href="/shipping" className="text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
+                CANCEL ANYTIME BEFORE THEN — FULL SHIPPING &amp; RETURNS POLICY
+              </Link>
             </div>
           </>
         )}

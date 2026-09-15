@@ -42,7 +42,7 @@ export default function ContactPage() {
           <div className="flex flex-col justify-center space-y-12">
             <div>
               <p className="text-xs tracking-[0.2em] text-stone-600 mb-4">EMAIL</p>
-              <p className="text-stone-300">hello@redtail.com</p>
+              <a href="mailto:shop@wearredtail.com" className="text-stone-300 hover:text-stone-100 transition-colors">shop@wearredtail.com</a>
             </div>
             <div>
               <p className="text-xs tracking-[0.2em] text-stone-600 mb-4">FOLLOW</p>

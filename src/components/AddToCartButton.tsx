@@ -92,9 +92,14 @@ export default function AddToCartButton({ product }: Props) {
         {added ? '✓ ADDED TO CART' : 'ADD TO CART'}
       </button>
 
-      <p className="text-stone-600 text-xs tracking-[0.2em] text-center">
-        SHIPPING INCLUDED — NO SURPRISES AT CHECKOUT
-      </p>
+      <div className="space-y-2 text-center">
+        <p className="text-stone-600 text-xs tracking-[0.2em]">
+          MADE TO ORDER — SHIPS AFTER THE DROP CLOSES. SHIPPING INCLUDED.
+        </p>
+        <Link href="/shipping" className="block text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
+          CANCEL ANYTIME BEFORE THEN — FULL SHIPPING &amp; RETURNS POLICY
+        </Link>
+      </div>
     </div>
   );
 }
