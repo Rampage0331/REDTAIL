@@ -17,7 +17,7 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
-          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-8">
             {[
               { label: "NAME", type: "text", placeholder: "Your name" },
               { label: "EMAIL", type: "email", placeholder: "your@email.com" },
