@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import { ThemeSetter } from "@/components/ThemeSetter";
+import { BackToProductLink, BackToProductButton } from "@/components/BackToProduct";
 
 export const metadata: Metadata = {
   title: "Shipping & Returns | REDTAIL",
   description: "How REDTAIL drops work, and our returns policy.",
 };
 
-export default function ShippingPage() {
+export default async function ShippingPage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
+  const { from } = await searchParams;
+
   return (
     <div className="pt-32 pb-24 min-h-screen">
       <ThemeSetter theme="default" />
       <div className="max-w-4xl mx-auto px-6">
+        <BackToProductLink from={from} />
         <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">HOW IT WORKS</p>
         <h1 className="font-display text-5xl md:text-6xl tracking-wide text-stone-100 mb-10">
           SHIPPING &amp; RETURNS
@@ -73,12 +77,14 @@ export default function ShippingPage() {
           </ul>
         </div>
 
-        <p className="text-stone-500 text-sm">
+        <p className="text-stone-500 text-sm mb-16">
           To start a return or ask about your order, email us at{" "}
           <a href="mailto:shop@wearredtail.com" className="text-stone-300 hover:text-stone-100 transition-colors underline">
             shop@wearredtail.com
           </a>.
         </p>
+
+        <BackToProductButton from={from} />
       </div>
     </div>
   );

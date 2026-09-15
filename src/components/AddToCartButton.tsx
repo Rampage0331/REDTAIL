@@ -60,7 +60,7 @@ export default function AddToCartButton({ product }: Props) {
       <div>
         <div className="flex items-center justify-between mb-4">
           <p className="text-xs tracking-[0.2em] text-stone-600">SIZE</p>
-          <Link href="/size-guide" className="text-xs tracking-[0.2em] text-stone-600 underline hover:text-stone-400 transition-colors">
+          <Link href={`/size-guide?from=${product.id}`} className="text-xs tracking-[0.2em] text-stone-600 underline hover:text-stone-400 transition-colors">
             SIZE GUIDE
           </Link>
         </div>
@@ -96,7 +96,7 @@ export default function AddToCartButton({ product }: Props) {
         <p className="text-stone-600 text-xs tracking-[0.2em]">
           MADE TO ORDER — SHIPS AFTER THE DROP CLOSES. SHIPPING INCLUDED.
         </p>
-        <Link href="/shipping" className="block text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
+        <Link href={`/shipping?from=${product.id}`} className="block text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
           CANCEL ANYTIME BEFORE THEN — FULL SHIPPING &amp; RETURNS POLICY
         </Link>
       </div>

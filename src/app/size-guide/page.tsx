@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeSetter } from "@/components/ThemeSetter";
+import { BackToProductLink, BackToProductButton } from "@/components/BackToProduct";
 
 export const metadata: Metadata = {
   title: "Size Guide | REDTAIL",
@@ -14,11 +15,14 @@ const SIZES = [
   { size: "XXL", chest: "26", length: "33", sleeve: "9¾" },
 ];
 
-export default function SizeGuidePage() {
+export default async function SizeGuidePage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
+  const { from } = await searchParams;
+
   return (
     <div className="pt-32 pb-24 min-h-screen">
       <ThemeSetter theme="default" />
       <div className="max-w-4xl mx-auto px-6">
+        <BackToProductLink from={from} />
         <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">FIND YOUR FIT</p>
         <h1 className="font-display text-5xl md:text-6xl tracking-wide text-stone-100 mb-10">SIZE GUIDE</h1>
 
@@ -60,6 +64,10 @@ export default function SizeGuidePage() {
             <span className="text-stone-300">How to measure</span> — lay a shirt you already own and
             love the fit of flat on a table, then compare its measurements to the chart above.
           </p>
+        </div>
+
+        <div className="mt-16">
+          <BackToProductButton from={from} />
         </div>
       </div>
     </div>
