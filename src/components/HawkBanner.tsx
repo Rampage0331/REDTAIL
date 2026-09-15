@@ -8,15 +8,15 @@ export default function HawkBanner() {
 
   return (
     <div
-      className="absolute inset-x-0 top-0 pointer-events-none"
-      style={{ zIndex: 6, height: '340px' }}
+      className="absolute inset-x-0 pointer-events-none"
+      style={{ top: '110px', height: '260px', zIndex: 5 }}
     >
       <div
         onAnimationEnd={() => setFlown(true)}
         style={{
           animation: 'hawkFly 7s linear 1 forwards',
           position: 'absolute',
-          top: '24px',
+          top: 0,
           willChange: 'transform',
         }}
       >
@@ -25,10 +25,9 @@ export default function HawkBanner() {
           src="/images/hawk.png"
           alt=""
           style={{
-            width: '300px',
+            width: '260px',
             height: 'auto',
             display: 'block',
-            mixBlendMode: 'screen',
             animation: 'hawkBob 1.4s ease-in-out infinite',
             willChange: 'transform',
           }}
