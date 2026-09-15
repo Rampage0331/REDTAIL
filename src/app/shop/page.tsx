@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { products, DROP_NAME } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 import { ThemeSetter } from "@/components/ThemeSetter";
+
+export const metadata: Metadata = {
+  title: `Shop — ${DROP_NAME} | REDTAIL`,
+  description: "Shop the REDTAIL Genesis//001 drop. Discern. Commit. Pursue.",
+};
 
 export default function ShopPage() {
   return (

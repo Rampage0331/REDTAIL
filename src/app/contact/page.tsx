@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { ThemeSetter } from "@/components/ThemeSetter";
+
+export const metadata: Metadata = {
+  title: "Contact | REDTAIL",
+  description: "Get in touch with REDTAIL.",
+};
 
 export default function ContactPage() {
   return (
@@ -11,25 +17,26 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
             {[
               { label: "NAME", type: "text", placeholder: "Your name" },
               { label: "EMAIL", type: "email", placeholder: "your@email.com" },
             ].map(({ label, type, placeholder }) => (
               <div key={label}>
                 <label className="block text-xs tracking-[0.2em] text-stone-600 mb-3">{label}</label>
-                <input type={type} placeholder={placeholder}
-                  className="w-full bg-transparent border border-stone-800 px-4 py-4 text-stone-100 text-sm focus:outline-none focus:border-stone-500 transition-colors placeholder:text-stone-700" />
+                <input type={type} placeholder={placeholder} disabled
+                  className="w-full bg-transparent border border-stone-800 px-4 py-4 text-stone-100 text-sm focus:outline-none focus:border-stone-500 transition-colors placeholder:text-stone-700 disabled:opacity-40 disabled:cursor-not-allowed" />
               </div>
             ))}
             <div>
               <label className="block text-xs tracking-[0.2em] text-stone-600 mb-3">MESSAGE</label>
-              <textarea rows={6} placeholder="What's on your mind?"
-                className="w-full bg-transparent border border-stone-800 px-4 py-4 text-stone-100 text-sm focus:outline-none focus:border-stone-500 transition-colors placeholder:text-stone-700 resize-none" />
+              <textarea rows={6} placeholder="What's on your mind?" disabled
+                className="w-full bg-transparent border border-stone-800 px-4 py-4 text-stone-100 text-sm focus:outline-none focus:border-stone-500 transition-colors placeholder:text-stone-700 resize-none disabled:opacity-40 disabled:cursor-not-allowed" />
             </div>
-            <button type="submit" className="px-10 py-4 bg-[#8b1212] text-stone-100 text-xs tracking-[0.3em] hover:bg-[#6e0e0e] transition-colors duration-300">
-              SEND IT
+            <button type="submit" disabled className="px-10 py-4 bg-[#8b1212] text-stone-100 text-xs tracking-[0.3em] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed">
+              SEND IT — COMING SOON
             </button>
+            <p className="text-stone-700 text-xs tracking-widest">Reach us directly at the email below in the meantime.</p>
           </form>
 
           <div className="flex flex-col justify-center space-y-12">

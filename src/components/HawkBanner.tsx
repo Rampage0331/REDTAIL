@@ -1,14 +1,20 @@
 'use client';
+import { useState } from 'react';
 
 export default function HawkBanner() {
+  const [flown, setFlown] = useState(false);
+
+  if (flown) return null;
+
   return (
     <div
       className="absolute inset-x-0 top-0 pointer-events-none"
       style={{ zIndex: 6, height: '340px' }}
     >
       <div
+        onAnimationEnd={() => setFlown(true)}
         style={{
-          animation: 'hawkFly 16s linear infinite',
+          animation: 'hawkFly 7s linear 1 forwards',
           position: 'absolute',
           top: '24px',
           willChange: 'transform',

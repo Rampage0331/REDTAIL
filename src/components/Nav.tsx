@@ -73,14 +73,16 @@ export default function Nav() {
               <line x1="3" y1="6" x2="21" y2="6"/>
               <path d="M16 10a4 4 0 01-8 0"/>
             </svg>
-            {totalItems > 0 && (
-              <span
-                className="absolute -top-2 -right-2 w-4 h-4 rounded-full text-[9px] flex items-center justify-center font-bold text-stone-900"
-                style={{ backgroundColor: 'var(--color-accent)' }}
-              >
-                {totalItems}
-              </span>
-            )}
+            <span
+              className="absolute -top-2 -right-2 w-4 h-4 rounded-full text-[9px] flex items-center justify-center font-bold text-stone-900 transition-opacity duration-300"
+              style={{
+                backgroundColor: 'var(--color-accent)',
+                opacity: totalItems > 0 ? 1 : 0,
+                pointerEvents: totalItems > 0 ? 'auto' : 'none',
+              }}
+            >
+              {totalItems}
+            </span>
           </Link>
         </div>
 

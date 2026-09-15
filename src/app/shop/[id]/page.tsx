@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getProductById, products } from "@/lib/products";
 import { ThemeSetter } from "@/components/ThemeSetter";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -7,6 +8,17 @@ import type { Theme } from "@/context/ThemeContext";
 
 export function generateStaticParams() {
   return products.map((p) => ({ id: p.id }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const product = getProductById(id);
+  if (!product) return {};
+  return {
+    title: `${product.name} | REDTAIL`,
+    description: product.description,
+    openGraph: product.image ? { images: [{ url: product.image }] } : undefined,
+  };
 }
 
 const PRODUCT_THEMES: Record<string, Theme> = {

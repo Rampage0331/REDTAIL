@@ -14,9 +14,23 @@ export const metadata: Metadata = {
   description: "Discern. Commit. Pursue.",
 };
 
+const themeInitScript = `
+(function () {
+  try {
+    var theme = localStorage.getItem('redtail-theme');
+    if (theme && theme !== 'default') {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="font-sans antialiased">
         <CartProvider>
           <ThemeProvider>

@@ -1,6 +1,6 @@
-'use client';
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -45,10 +45,8 @@ export default function ProductCard({ product }: { product: Product }) {
         <div>
           <p className="text-base tracking-[0.15em] text-stone-500 mb-1">{product.colors.join(" / ")}</p>
           <h3
-            className="text-stone-100 font-medium tracking-wide transition-colors duration-300"
-            style={{ ['--tw-text-opacity' as string]: '1' }}
-            onMouseEnter={e => (e.currentTarget.style.color = hoverAccent)}
-            onMouseLeave={e => (e.currentTarget.style.color = '')}
+            className="product-name font-medium tracking-wide"
+            style={{ '--hover-accent': hoverAccent } as CSSProperties}
           >
             {product.name}
           </h3>

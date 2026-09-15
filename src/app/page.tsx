@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getFeaturedProducts, DROP_NAME } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 import { ThemeSetter } from "@/components/ThemeSetter";
+import HawkBanner from "@/components/HawkBanner";
 
 export default function HomePage() {
   const featured = getFeaturedProducts();
@@ -12,6 +13,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
         <ThemeSetter theme="default" />
+        <HawkBanner />
         {/* Hero gradient — transparent at bottom so body canvas bleeds through */}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #111111 0%, #0a0a0a 50%, rgba(10,10,10,0.6) 78%, rgba(10,10,10,0) 100%)' }} />
 

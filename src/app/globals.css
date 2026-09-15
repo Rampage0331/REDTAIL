@@ -128,7 +128,7 @@ body {
   color: #f5f5f4;
   transition: color 0.3s ease;
 }
-.product-name:hover { color: var(--color-accent); }
+.product-name:hover { color: var(--hover-accent, var(--color-accent)); }
 
 .size-btn:hover {
   border-color: var(--color-accent) !important;

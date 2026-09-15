@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { ThemeSetter } from "@/components/ThemeSetter";
+
+export const metadata: Metadata = {
+  title: "Our Story | REDTAIL",
+  description: "The hawk doesn't ask permission. The ideology behind REDTAIL.",
+};
 
 export default function StoryPage() {
   return (
