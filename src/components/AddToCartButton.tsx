@@ -1,6 +1,7 @@
 'use client';
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
+import Link from 'next/link';
 
 type Props = {
   product: {
@@ -57,7 +58,12 @@ export default function AddToCartButton({ product }: Props) {
 
       {/* Size */}
       <div>
-        <p className="text-xs tracking-[0.2em] text-stone-600 mb-4">SIZE</p>
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-xs tracking-[0.2em] text-stone-600">SIZE</p>
+          <Link href="/size-guide" className="text-xs tracking-[0.2em] text-stone-600 underline hover:text-stone-400 transition-colors">
+            SIZE GUIDE
+          </Link>
+        </div>
         <div className="flex flex-wrap gap-2">
           {product.sizes.map((s) => (
             <button
@@ -85,6 +91,10 @@ export default function AddToCartButton({ product }: Props) {
       >
         {added ? '✓ ADDED TO CART' : 'ADD TO CART'}
       </button>
+
+      <p className="text-stone-600 text-xs tracking-[0.2em] text-center">
+        SHIPPING INCLUDED — NO SURPRISES AT CHECKOUT
+      </p>
     </div>
   );
 }

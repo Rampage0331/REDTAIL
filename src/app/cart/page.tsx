@@ -64,6 +64,9 @@ export default function CartPage() {
                 </span>
                 <span className="text-stone-300 font-medium text-xl">${totalPrice}</span>
               </div>
+              <p className="text-stone-600 text-xs tracking-[0.2em] w-full max-w-sm text-right">
+                SHIPPING INCLUDED — NO SURPRISES AT CHECKOUT
+              </p>
               <div className="border-t border-stone-800/50 w-full max-w-sm" />
               <button
                 disabled
