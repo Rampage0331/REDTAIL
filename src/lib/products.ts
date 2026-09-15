@@ -18,7 +18,7 @@ export const products: Product[] = [
   {
     id: "the-hunter",
     name: "The Hunter",
-    description: "Red. Unyielding. Relentless. The Hunter moves when the moment demands — not a second before.",
+    description: "Unyielding. Relentless. The Hunter moves when the moment demands — not a second before.",
     price: 65,
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     colors: ["Vintage Black // Red"],
