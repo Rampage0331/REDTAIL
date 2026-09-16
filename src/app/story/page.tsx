@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ThemeSetter } from "@/components/ThemeSetter";
 
 export const metadata: Metadata = {
@@ -16,8 +17,15 @@ export default function StoryPage() {
           <h1 className="font-display text-5xl md:text-7xl tracking-wide text-stone-100 leading-[0.9]">OUR<br />STORY</h1>
         </div>
 
-        <div className="w-full aspect-[21/9] bg-[#1c1410] mb-24 flex items-center justify-center">
-          <p className="text-stone-700 text-xs tracking-widest">CAMPAIGN IMAGE</p>
+        <div className="relative w-full max-w-3xl mx-auto aspect-square mb-24 overflow-hidden">
+          <Image
+            src="/images/story-campaign.jpg"
+            alt="Scouting the treeline, bow in hand"
+            fill
+            sizes="(min-width: 768px) 768px, 100vw"
+            className="object-cover"
+            priority
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 mb-24">
