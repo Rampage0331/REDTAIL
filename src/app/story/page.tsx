@@ -35,19 +35,10 @@ export default function StoryPage() {
             </h2>
             <p className="text-xs tracking-[0.4em] text-[#8b1212]">DISCERN. COMMIT. PURSUE.</p>
           </div>
-          <div className="flex flex-col justify-center space-y-6 text-stone-400 leading-relaxed">
+          <div className="flex flex-col justify-center text-stone-400 leading-relaxed">
             <p>
-              A red-tailed hawk doesn&apos;t hesitate. It reads the moment, commits to the strike,
-              and follows through completely — no second-guessing, no wasted movement. Discern.
-              Commit. Pursue. We didn&apos;t choose those words because they sounded good. We chose
-              them because that&apos;s exactly what the hawk does, every time, without exception.
-            </p>
-            <p>
-              Every piece we make follows the same principle: discern what&apos;s worth making,
-              commit to making it right, and pursue it without compromise. No filler drops, no
-              chasing what&apos;s trending. If something here resonates with you, it&apos;s not
-              because we designed it to — it&apos;s because it&apos;s true, and that&apos;s rarer
-              than it should be.
+              Discern. Commit. Pursue. Not a slogan. REDTAIL is built on it. So is everyone who
+              wears it.
             </p>
           </div>
         </div>
