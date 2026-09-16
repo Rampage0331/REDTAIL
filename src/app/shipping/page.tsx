@@ -11,7 +11,7 @@ export default async function ShippingPage({ searchParams }: { searchParams: Pro
   const { from } = await searchParams;
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
+    <div className="pt-32 pb-24 min-h-dvh">
       <ThemeSetter theme="default" />
       <div className="max-w-4xl mx-auto px-6">
         <BackToProductLink from={from} />

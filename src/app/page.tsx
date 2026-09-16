@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-end pb-24 overflow-hidden">
+      <section className="relative min-h-dvh flex items-end pb-24 overflow-hidden">
         <ThemeSetter theme="default" />
         {/* Hero gradient — transparent at bottom so body canvas bleeds through */}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #111111 0%, #0a0a0a 50%, rgba(10,10,10,0.6) 78%, rgba(10,10,10,0) 100%)' }} />

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-32 pb-24 min-h-screen">
+    <div className="pt-32 pb-24 min-h-dvh">
       <ThemeSetter theme="default" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">

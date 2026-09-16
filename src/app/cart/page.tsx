@@ -8,7 +8,7 @@ export default function CartPage() {
   const { items, removeItem, updateQuantity, totalItems, totalPrice } = useCart();
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
+    <div className="pt-32 pb-24 min-h-dvh">
       <ThemeSetter theme="default" />
       <div className="max-w-4xl xl:max-w-5xl mx-auto px-6">
         <p className="text-xs tracking-[0.3em] mb-3" style={{ color: 'var(--color-accent)' }}>YOUR</p>
