@@ -43,13 +43,6 @@ export default function StoryPage() {
               them because that&apos;s exactly what the hawk does, every time, without exception.
             </p>
             <p>
-              I spent years in the Marine Corps, and years after that hunting — hawks showing up
-              when I least expected them, in moments that never quite felt like coincidence. A few
-              weeks ago, right in the middle of building this, I was at the park with my son and we
-              found a red-tailed hawk feather on the ground. I didn&apos;t need it to mean something.
-              It already did.
-            </p>
-            <p>
               Every piece we make follows the same principle: discern what&apos;s worth making,
               commit to making it right, and pursue it without compromise. No filler drops, no
               chasing what&apos;s trending. If something here resonates with you, it&apos;s not
