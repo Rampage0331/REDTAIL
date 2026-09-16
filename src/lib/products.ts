@@ -49,7 +49,7 @@ export const products: Product[] = [
       "Enzyme washed for a soft hand-feel — arrives pre-broken-in with clean, even color",
       "Classic fit through the shoulder and body",
       "Size up for an oversized, relaxed fit",
-      "Holographic gold screenprint, front and back — shifts and catches light as you move",
+      "Holographic gold screenprint, front and back",
     ],
     image: "/images/the-king.png",
   },
