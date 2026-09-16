@@ -60,7 +60,7 @@ export default function HomePage() {
           {[
             { label: "01 — MATERIAL",     value: "PREMIUM COTTON",     sub: "Soft, structured, and made for everyday wear." },
             { label: "02 — CONSTRUCTION", value: "SIGNATURE DETAILS",  sub: "Distinct graphics, contrast hems, and considered finishes." },
-            { label: "03 — FIT",          value: "WEAR IT YOUR WAY",   sub: "clean fit / oversized look" },
+            { label: "03 — FIT",          value: "TRUE TO SIZE",       sub: "Cut true to size through the chest and body — size up for a relaxed, oversized fit." },
           ].map(({ label, value, sub }) => (
             <div key={label}>
               <p className="text-xs xl:text-sm tracking-[0.3em] text-stone-600 mb-3">{label}</p>
