@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <p className="text-xs tracking-[0.2em] text-stone-600 mb-5">NAVIGATE</p>
             <nav className="flex flex-col gap-3">
-              {[["Shop", "/shop"], ["Our Story", "/story"], ["Size Guide", "/size-guide"], ["Shipping & Returns", "/shipping"], ["Contact", "/contact"]].map(([label, href]) => (
+              {[["Shop", "/shop"], ["Ideology", "/ideology"], ["Size Guide", "/size-guide"], ["Shipping & Returns", "/shipping"], ["Contact", "/contact"]].map(([label, href]) => (
                 <Link key={href} href={href} className="text-stone-400 hover:text-stone-100 text-sm transition-colors duration-300">{label}</Link>
               ))}
             </nav>

@@ -3,18 +3,18 @@ import Image from "next/image";
 import { ThemeSetter } from "@/components/ThemeSetter";
 
 export const metadata: Metadata = {
-  title: "Our Story | REDTAIL",
+  title: "Ideology | REDTAIL",
   description: "The ideology behind REDTAIL.",
 };
 
-export default function StoryPage() {
+export default function IdeologyPage() {
   return (
     <div className="pt-32 pb-24">
       <ThemeSetter theme="default" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
-          <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">THE IDEOLOGY</p>
-          <h1 className="font-display text-5xl md:text-7xl tracking-wide text-stone-100 leading-[0.9]">OUR<br />STORY</h1>
+          <p className="text-xs tracking-[0.3em] text-stone-600 mb-3">REDTAIL</p>
+          <h1 className="font-display text-5xl md:text-7xl tracking-wide text-stone-100 leading-[0.9]">IDEOLOGY</h1>
         </div>
 
         <div className="relative w-full max-w-3xl mx-auto aspect-square mb-24 overflow-hidden">

@@ -23,7 +23,7 @@ export default function Nav() {
   const links = [
     { label: "HOME", href: "/" },
     { label: "SHOP", href: "/shop" },
-    { label: "OUR STORY", href: "/story" },
+    { label: "IDEOLOGY", href: "/ideology" },
     { label: "CONTACT", href: "/contact" },
   ];
 
