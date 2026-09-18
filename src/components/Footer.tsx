@@ -21,7 +21,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-stone-800/50 pt-8 flex justify-center">
+        <div className="border-t border-stone-800/50 pt-8 flex flex-col items-center gap-4">
+          <div className="flex gap-6">
+            <Link href="/privacy" className="text-stone-600 hover:text-stone-400 text-xs tracking-widest transition-colors duration-300">PRIVACY POLICY</Link>
+            <Link href="/terms" className="text-stone-600 hover:text-stone-400 text-xs tracking-widest transition-colors duration-300">TERMS OF SERVICE</Link>
+          </div>
           <p className="text-stone-600 text-xs tracking-widest">© {new Date().getFullYear()} REDTAIL BRAND COMPANY LLC. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
