@@ -99,8 +99,8 @@ export default function TermsPage() {
 
         <Section title="Governing Law">
           <p>
-            These terms are governed by the laws of [STATE] , without regard to conflict-of-law
-            principles.
+            These terms are governed by the laws of the State of California, without regard to
+            conflict-of-law principles.
           </p>
         </Section>
 
