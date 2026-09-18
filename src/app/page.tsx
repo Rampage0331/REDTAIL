@@ -31,9 +31,6 @@ export default function HomePage() {
               <Link href="/shop" className="btn-accent px-10 py-4 text-stone-100 text-xs xl:text-sm tracking-[0.25em]">
                 SHOP NOW
               </Link>
-              <Link href="/ideology" className="px-10 py-4 border border-stone-700 text-stone-400 text-xs xl:text-sm tracking-[0.25em] hover:border-stone-400 hover:text-stone-100 transition-colors duration-300">
-                IDEOLOGY
-              </Link>
             </div>
           </div>
         </div>
