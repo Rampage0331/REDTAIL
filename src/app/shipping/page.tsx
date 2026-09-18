@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeSetter } from "@/components/ThemeSetter";
 import { BackToProductLink, BackToProductButton } from "@/components/BackToProduct";
+import { getDropCloseDateLabel } from "@/lib/drop";
 
 export const metadata: Metadata = {
   title: "Shipping & Returns | REDTAIL",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 
 export default async function ShippingPage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
   const { from } = await searchParams;
+  const closeDate = getDropCloseDateLabel();
 
   return (
     <div className="pt-32 pb-24 min-h-dvh">
@@ -30,8 +32,8 @@ export default async function ShippingPage({ searchParams }: { searchParams: Pro
           <ul className="space-y-4">
             <li className="text-stone-400 text-sm leading-relaxed flex items-start gap-3">
               <span style={{ color: 'var(--color-accent)' }} className="mt-1">—</span>
-              Genesis//001 is open for a limited window. Once it closes, we go straight to
-              production for everyone who ordered.
+              Genesis//001 is open for a limited window{closeDate ? ` — ordering closes ${closeDate}` : ""}.
+              Once it closes, we go straight to production for everyone who ordered.
             </li>
             <li className="text-stone-400 text-sm leading-relaxed flex items-start gap-3">
               <span style={{ color: 'var(--color-accent)' }} className="mt-1">—</span>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { products, DROP_NAME } from "@/lib/products";
+import { getDropClosingPhrase } from "@/lib/drop";
 import ProductCard from "@/components/ProductCard";
 import { ThemeSetter } from "@/components/ThemeSetter";
 
@@ -22,7 +23,7 @@ export default function ShopPage() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-12">
           <p className="text-stone-500 text-sm">{products.length} pieces</p>
           <p className="text-stone-600 text-xs tracking-[0.2em]">
-            MADE TO ORDER — SHIPS AFTER THE DROP CLOSES.{" "}
+            MADE TO ORDER — {getDropClosingPhrase()}.{" "}
             <Link href="/shipping" className="underline hover:text-stone-400 transition-colors">
               SHIPPING &amp; RETURNS
             </Link>

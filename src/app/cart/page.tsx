@@ -3,6 +3,7 @@ import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ThemeSetter } from '@/components/ThemeSetter';
+import { getDropClosingPhrase } from '@/lib/drop';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, totalItems, totalPrice } = useCart();
@@ -65,7 +66,7 @@ export default function CartPage() {
                 <span className="text-stone-300 font-medium text-xl">${totalPrice}</span>
               </div>
               <p className="text-stone-600 text-xs tracking-[0.2em] w-full max-w-sm text-right">
-                MADE TO ORDER — SHIPS AFTER THE DROP CLOSES. SHIPPING INCLUDED.
+                MADE TO ORDER — {getDropClosingPhrase()}. SHIPPING INCLUDED.
               </p>
               <div className="border-t border-stone-800/50 w-full max-w-sm" />
               <button

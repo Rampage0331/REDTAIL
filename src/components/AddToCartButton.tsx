@@ -2,6 +2,7 @@
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
 import Link from 'next/link';
+import { isDropClosed, getDropClosingPhrase } from '@/lib/drop';
 
 type Props = {
   product: {
@@ -33,6 +34,17 @@ export default function AddToCartButton({ product }: Props) {
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
+
+  if (isDropClosed()) {
+    return (
+      <div className="space-y-4 border border-stone-800 px-6 py-8 text-center">
+        <p className="text-stone-300 tracking-[0.2em] text-sm">GENESIS//001 HAS CLOSED</p>
+        <p className="text-stone-600 text-sm">
+          This drop is no longer accepting orders. Follow along for the next one.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -94,7 +106,7 @@ export default function AddToCartButton({ product }: Props) {
 
       <div className="space-y-2 text-center">
         <p className="text-stone-600 text-xs tracking-[0.2em]">
-          MADE TO ORDER — SHIPS AFTER THE DROP CLOSES. SHIPPING INCLUDED.
+          MADE TO ORDER — {getDropClosingPhrase()}. SHIPPING INCLUDED.
         </p>
         <Link href={`/shipping?from=${product.id}`} className="block text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
           CANCEL ANYTIME BEFORE THEN — FULL SHIPPING &amp; RETURNS POLICY
