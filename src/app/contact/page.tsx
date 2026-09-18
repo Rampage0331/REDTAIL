@@ -48,7 +48,7 @@ export default function ContactPage() {
               <p className="text-xs tracking-[0.2em] text-stone-600 mb-4">FOLLOW</p>
               <div className="flex gap-6">
                 <a href="https://instagram.com/wearredtail" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.2em] text-stone-500 hover:text-stone-100 transition-colors">INSTAGRAM</a>
-                <a href="#" className="text-xs tracking-[0.2em] text-stone-500 hover:text-stone-100 transition-colors">TIKTOK</a>
+                <a href="https://tiktok.com/@wearredtail" target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.2em] text-stone-500 hover:text-stone-100 transition-colors">TIKTOK</a>
               </div>
             </div>
           </div>
