@@ -4,16 +4,42 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import AdPixels from "@/components/AdPixels";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
+const description =
+  "Discern. Commit. Pursue. Premium made-to-order apparel — Genesis//001 The Hunt Begins.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
-  title: "REDTAIL",
-  description: "Discern. Commit. Pursue.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "REDTAIL",
+    template: "%s | REDTAIL",
+  },
+  description,
+  openGraph: {
+    title: "REDTAIL",
+    description,
+    url: "/",
+    siteName: "REDTAIL",
+    images: [{ url: "/images/story-campaign.jpg", alt: "REDTAIL" }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "REDTAIL",
+    description,
+    images: ["/images/story-campaign.jpg"],
+  },
 };
 
 const themeInitScript = `
@@ -42,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </ThemeProvider>
         </CartProvider>
         <Analytics />
+        <AdPixels />
       </body>
     </html>
   );

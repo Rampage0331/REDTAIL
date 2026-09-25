@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import EmailSignupForm from "./EmailSignupForm";
 
 export default function Footer() {
   return (
     <footer className="mt-32" style={{ backgroundColor: 'var(--color-bg)', transition: 'background-color 0.7s ease' }}>
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="flex flex-col items-center text-center">
             <Image src="/images/logo.png" alt="Redtail" width={140} height={70} className="h-14 w-auto mb-4" />
             <p className="text-xs tracking-[0.3em] text-stone-500 mb-1">DISCERN. COMMIT. PURSUE.</p>
@@ -18,6 +19,10 @@ export default function Footer() {
                 <Link key={href} href={href} className="text-stone-400 hover:text-stone-100 text-sm transition-colors duration-300">{label}</Link>
               ))}
             </nav>
+          </div>
+
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <EmailSignupForm />
           </div>
         </div>
 

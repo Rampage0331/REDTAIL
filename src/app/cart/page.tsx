@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,6 +8,30 @@ import { getDropClosingPhrase } from '@/lib/drop';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, totalItems, totalPrice } = useCart();
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
+
+  const handleCheckout = async () => {
+    setIsCheckingOut(true);
+    setCheckoutError(null);
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: items.map(({ id, color, size, quantity }) => ({ id, color, size, quantity })),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) {
+        throw new Error(data.error ?? 'Checkout failed');
+      }
+      window.location.href = data.url;
+    } catch (err) {
+      setCheckoutError(err instanceof Error ? err.message : 'Checkout failed');
+      setIsCheckingOut(false);
+    }
+  };
 
   return (
     <div className="pt-32 pb-24 min-h-dvh">
@@ -70,12 +95,15 @@ export default function CartPage() {
               </p>
               <div className="border-t border-stone-800/50 w-full max-w-sm" />
               <button
-                disabled
-                className="btn-accent w-full max-w-sm py-4 text-stone-100 text-xs tracking-[0.3em] opacity-50 cursor-not-allowed"
+                onClick={handleCheckout}
+                disabled={isCheckingOut}
+                className="btn-accent w-full max-w-sm py-4 text-stone-100 text-xs tracking-[0.3em] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                CHECKOUT — COMING SOON
+                {isCheckingOut ? 'REDIRECTING…' : 'CHECKOUT'}
               </button>
-              <p className="text-stone-700 text-xs tracking-widest">Store launches soon. Your cart is saved.</p>
+              {checkoutError && (
+                <p className="text-red-500 text-xs tracking-widest w-full max-w-sm text-right">{checkoutError}</p>
+              )}
               <Link href="/shipping" className="text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
                 CANCEL ANYTIME BEFORE THEN — FULL SHIPPING &amp; RETURNS POLICY
               </Link>

@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model EmailSignup {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+// status: "paid" | "failed" | "pending"
+model Order {
+  id               String    @id @default(cuid())
+  stripeSessionId  String    @unique
+  stripeCustomerId String?
+  status           String    @default("pending")
+  email            String?
+  amountTotal      Int
+  currency         String
+  cartJson         String
+  shippingJson     String?
+  createdAt        DateTime  @default(now())
+  fulfilledAt      DateTime?
+}
