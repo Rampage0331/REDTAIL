@@ -9,6 +9,15 @@ function getResendClient(): Resend | null {
   return client;
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 type OrderConfirmationEmailInput = {
   to: string;
   items: { name: string; color: string; size: string; quantity: number }[];
@@ -46,4 +55,37 @@ export async function sendOrderConfirmationEmail(input: OrderConfirmationEmailIn
     // Never let an email failure block order fulfillment.
     console.error('Failed to send order confirmation email', err);
   }
+}
+
+type ContactInquiryEmailInput = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+// Unlike order confirmations, a failure here should surface to the sender
+// (the form is their only stated way to reach out) — so this throws instead
+// of swallowing errors.
+export async function sendContactInquiryEmail(input: ContactInquiryEmailInput) {
+  const resend = getResendClient();
+  if (!resend) {
+    throw new Error('Email is not configured');
+  }
+
+  const fromAddress = process.env.RESEND_FROM_EMAIL ?? 'orders@wearredtail.com';
+
+  await resend.emails.send({
+    from: `REDTAIL Website <${fromAddress}>`,
+    to: 'shop@wearredtail.com',
+    replyTo: input.email,
+    subject: `New contact inquiry from ${input.name}`,
+    html: `
+      <div style="font-family:sans-serif;">
+        <p><strong>Name:</strong> ${escapeHtml(input.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(input.email)}</p>
+        <p><strong>Message:</strong></p>
+        <p>${escapeHtml(input.message).replace(/\n/g, '<br/>')}</p>
+      </div>
+    `,
+  });
 }
