@@ -53,6 +53,7 @@ export async function POST(request: NextRequest) {
           name: `${product.name} — ${item.color} / ${item.size}`,
           images: product.image ? [new URL(product.image, siteUrl).toString()] : undefined,
           metadata: { productId: product.id, color: item.color, size: item.size },
+          tax_code: 'txcd_30011000', // Clothing & Footwear
         },
       },
     });
@@ -63,6 +64,7 @@ export async function POST(request: NextRequest) {
   const session = await stripe.checkout.sessions.create({
     mode: 'payment',
     line_items: lineItems,
+    automatic_tax: { enabled: true },
     shipping_address_collection: { allowed_countries: ['US', 'CA'] },
     success_url: `${siteUrl}/order/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${siteUrl}/cart`,
