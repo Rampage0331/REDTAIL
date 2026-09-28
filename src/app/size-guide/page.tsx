@@ -13,6 +13,7 @@ const SIZES = [
   { size: "L", chest: "22½", length: "30½", sleeve: "9" },
   { size: "XL", chest: "24½", length: "31¼", sleeve: "9½" },
   { size: "XXL", chest: "26", length: "33", sleeve: "9¾" },
+  { size: "3XL", chest: "27½", length: "34¼", sleeve: "10" },
 ];
 
 export default async function SizeGuidePage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
