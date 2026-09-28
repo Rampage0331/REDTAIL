@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import type Stripe from 'stripe';
 import { getStripeClient } from '@/lib/stripe';
 import { prisma } from '@/lib/db';
+import { getProductById } from '@/lib/products';
+import { sendOrderConfirmationEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   const signature = request.headers.get('stripe-signature');
@@ -49,6 +51,9 @@ async function upsertOrder(session: Stripe.Checkout.Session, status: 'paid' | 'f
     ? JSON.stringify(session.customer_details.address)
     : null;
 
+  const existing = await prisma.order.findUnique({ where: { stripeSessionId: session.id } });
+  const wasAlreadyPaid = existing?.status === 'paid';
+
   await prisma.order.upsert({
     where: { stripeSessionId: session.id },
     create: {
@@ -67,4 +72,25 @@ async function upsertOrder(session: Stripe.Checkout.Session, status: 'paid' | 'f
       fulfilledAt: status === 'paid' ? new Date() : null,
     },
   });
+
+  // Only send once, on the first transition into "paid" — webhook retries
+  // or the async-payment-succeeded event firing after completed shouldn't
+  // re-send the confirmation.
+  if (status === 'paid' && !wasAlreadyPaid && session.customer_details?.email) {
+    const cartItems: { id: string; color: string; size: string; quantity: number }[] =
+      JSON.parse(cartJson);
+    const items = cartItems.map((item) => ({
+      name: getProductById(item.id)?.name ?? item.id,
+      color: item.color,
+      size: item.size,
+      quantity: item.quantity,
+    }));
+
+    await sendOrderConfirmationEmail({
+      to: session.customer_details.email,
+      items,
+      amountTotal: session.amount_total ?? 0,
+      currency: session.currency ?? 'usd',
+    });
+  }
 }

@@ -38,7 +38,10 @@ export default function IdeologyPage() {
           <div className="flex flex-col justify-center text-stone-400 leading-relaxed">
             <p>
               Discern. Commit. Pursue. Not a slogan. REDTAIL is built on it. So is everyone who
-              wears it. Take your place in the Warband.
+              wears it.
+            </p>
+            <p className="mt-6 text-stone-100 tracking-wide">
+              Take your place in the Warband.
             </p>
           </div>
         </div>
