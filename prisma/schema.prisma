@@ -23,7 +23,19 @@ model Order {
   amountTotal      Int
   currency         String
   cartJson         String
+  shippingName     String?
   shippingJson     String?
   createdAt        DateTime  @default(now())
   fulfilledAt      DateTime?
+
+  // labelStatus: null (not shipped) | "purchasing" | "failed" | "print_failed" | "printed"
+  labelStatus         String?
+  labelError          String?
+  shippoTransactionId String?
+  labelUrl            String?
+  trackingNumber      String?
+  trackingUrl         String?
+  carrier             String?
+  shippedAt           DateTime?
+  shippedEmailSentAt  DateTime?
 }

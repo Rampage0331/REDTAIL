@@ -47,9 +47,10 @@ export async function POST(request: NextRequest) {
 
 async function upsertOrder(session: Stripe.Checkout.Session, status: 'paid' | 'failed') {
   const cartJson = typeof session.metadata?.cart === 'string' ? session.metadata.cart : '[]';
-  const shippingJson = session.customer_details?.address
-    ? JSON.stringify(session.customer_details.address)
-    : null;
+  // customer_details.address is the billing address; labels need the shipping one.
+  const shipping = session.collected_information?.shipping_details ?? null;
+  const shippingName = shipping?.name ?? session.customer_details?.name ?? null;
+  const shippingJson = shipping?.address ? JSON.stringify(shipping.address) : null;
 
   const existing = await prisma.order.findUnique({ where: { stripeSessionId: session.id } });
   const wasAlreadyPaid = existing?.status === 'paid';
@@ -64,12 +65,14 @@ async function upsertOrder(session: Stripe.Checkout.Session, status: 'paid' | 'f
       amountTotal: session.amount_total ?? 0,
       currency: session.currency ?? 'usd',
       cartJson,
+      shippingName,
       shippingJson,
       fulfilledAt: status === 'paid' ? new Date() : null,
     },
     update: {
       status,
       fulfilledAt: status === 'paid' ? new Date() : null,
+      ...(shippingJson ? { shippingName, shippingJson } : {}),
     },
   });
 

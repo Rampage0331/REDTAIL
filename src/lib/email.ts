@@ -57,6 +57,54 @@ export async function sendOrderConfirmationEmail(input: OrderConfirmationEmailIn
   }
 }
 
+type ShippedEmailInput = {
+  to: string;
+  name?: string | null;
+  trackingNumber: string;
+  trackingUrl?: string | null;
+  carrier?: string | null;
+};
+
+// Returns whether the email actually went out, so the caller only records it
+// as sent on success (and can retry on a later reprint/ship action).
+export async function sendShippedEmail(input: ShippedEmailInput): Promise<boolean> {
+  const resend = getResendClient();
+  if (!resend) return false;
+
+  const fromAddress = process.env.RESEND_FROM_EMAIL ?? 'orders@wearredtail.com';
+  const firstName = input.name ? escapeHtml(input.name.split(' ')[0]) : '';
+  const tracking = escapeHtml(input.trackingNumber);
+  const trackingLine = input.trackingUrl
+    ? `<a href="${escapeHtml(input.trackingUrl)}" style="color:#e7e5e4;">${tracking}</a>`
+    : tracking;
+
+  try {
+    const result = await resend.emails.send({
+      from: `REDTAIL <${fromAddress}>`,
+      to: input.to,
+      replyTo: 'shop@wearredtail.com',
+      subject: 'Your REDTAIL order is on its way',
+      html: `
+        <div style="background:#0a0a0a;color:#e7e5e4;font-family:sans-serif;padding:40px;">
+          <p style="letter-spacing:0.3em;font-size:11px;color:#8b1212;text-transform:uppercase;">Shipped</p>
+          <h1 style="font-size:28px;letter-spacing:0.05em;margin:8px 0 24px;">THE HUNT IS ON ITS WAY</h1>
+          <p style="color:#a8a29e;">${firstName ? `${firstName}, your` : 'Your'} order has shipped${input.carrier ? ` via ${escapeHtml(input.carrier)}` : ''}.</p>
+          <p style="margin-top:16px;color:#a8a29e;">Tracking number: ${trackingLine}</p>
+          <p style="margin-top:24px;color:#78716c;font-size:13px;">Questions? Reply to this email or write to shop@wearredtail.com. Discern. Commit. Pursue.</p>
+        </div>
+      `,
+    });
+    if (result.error) {
+      console.error('Failed to send shipped email', result.error);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error('Failed to send shipped email', err);
+    return false;
+  }
+}
+
 type ContactInquiryEmailInput = {
   name: string;
   email: string;
