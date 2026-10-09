@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
     mode: 'payment',
     line_items: lineItems,
     automatic_tax: { enabled: true },
-    shipping_address_collection: { allowed_countries: ['US', 'CA'] },
+    shipping_address_collection: { allowed_countries: ['US'] },
     success_url: `${siteUrl}/order/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${siteUrl}/cart`,
     integration_identifier: `redtail_checkout_${randomLabelSuffix()}`,
