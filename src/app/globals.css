@@ -16,45 +16,8 @@
   --headline-glow:     rgba(139,18,18,0.20);
 }
 
-/* ─── THE KING — limo black + gold everywhere ──────────────────── */
-[data-theme="king"] {
-  --color-bg:          #060503;
-  --color-surface:     #110d03;
-  --color-accent:      #e8b800;
-  --color-accent-dark: #c49600;
-  --color-glow:        rgba(232,184,0,0.30);
-  --hero-from:         #201800;
-  --hero-mid:          #0d0b00;
-  --border-tint:       rgba(232,184,0,0.22);
-  --headline-glow:     rgba(232,184,0,0.35);
-}
-
-[data-theme="king"] body {
-  background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(232,184,0,0.22) 0%, rgba(232,184,0,0.06) 45%, transparent 72%);
-}
-
-/* Gold borders everywhere */
-[data-theme="king"] section,
-[data-theme="king"] footer,
-[data-theme="king"] header {
-  border-color: rgba(232,184,0,0.18) !important;
-}
-
-/* Gold headline glow */
-[data-theme="king"] h1,
-[data-theme="king"] h2 {
-  text-shadow: 0 0 60px rgba(232,184,0,0.40), 0 0 120px rgba(232,184,0,0.15);
-}
-
-/* SHOP NOW button glow */
-[data-theme="king"] .btn-accent {
-  box-shadow: 0 0 28px rgba(232,184,0,0.55), 0 0 70px rgba(232,184,0,0.20);
-  letter-spacing: 0.35em;
-}
-
-/* ─── THE HUNTER — near-black + blood red ──────────────────────── */
-[data-theme="hunter"] {
+/* ─── GENESIS//001 — near-black + blood red (product page) ─────── */
+[data-theme="genesis"] {
   --color-bg:          #080101;
   --color-surface:     #160404;
   --color-accent:      #e01212;
@@ -66,23 +29,23 @@
   --headline-glow:     rgba(224,18,18,0.35);
 }
 
-[data-theme="hunter"] body {
+[data-theme="genesis"] body {
   background-image:
     radial-gradient(ellipse at 50% 0%, rgba(224,18,18,0.20) 0%, rgba(224,18,18,0.05) 45%, transparent 72%);
 }
 
-[data-theme="hunter"] section,
-[data-theme="hunter"] footer,
-[data-theme="hunter"] header {
+[data-theme="genesis"] section,
+[data-theme="genesis"] footer,
+[data-theme="genesis"] header {
   border-color: rgba(224,18,18,0.18) !important;
 }
 
-[data-theme="hunter"] h1,
-[data-theme="hunter"] h2 {
+[data-theme="genesis"] h1,
+[data-theme="genesis"] h2 {
   text-shadow: 0 0 60px rgba(224,18,18,0.40), 0 0 120px rgba(224,18,18,0.15);
 }
 
-[data-theme="hunter"] .btn-accent {
+[data-theme="genesis"] .btn-accent {
   box-shadow: 0 0 28px rgba(224,18,18,0.55), 0 0 70px rgba(224,18,18,0.20);
 }
 

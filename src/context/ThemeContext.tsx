@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useContext, useEffect, useState } from 'react';
 
-export type Theme = 'default' | 'king' | 'hunter';
+export type Theme = 'default' | 'genesis';
 
 interface ThemeContextType {
   theme: Theme;

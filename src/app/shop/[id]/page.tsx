@@ -22,8 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 const PRODUCT_THEMES: Record<string, Theme> = {
-  "the-king": "king",
-  "the-hunter": "hunter",
+  "genesis-001": "genesis",
 };
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {

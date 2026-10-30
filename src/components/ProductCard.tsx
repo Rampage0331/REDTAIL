@@ -4,8 +4,7 @@ import type { CSSProperties } from "react";
 import { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
-  const isKing = product.id === 'the-king';
-  const hoverAccent = isKing ? '#e8b800' : 'var(--color-accent)';
+  const hoverAccent = 'var(--color-accent)';
 
   return (
     <Link href={`/shop/${product.id}`} className="group block">

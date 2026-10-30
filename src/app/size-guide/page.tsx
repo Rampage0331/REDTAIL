@@ -4,7 +4,7 @@ import { BackToProductLink, BackToProductButton } from "@/components/BackToProdu
 
 export const metadata: Metadata = {
   title: "Size Guide | REDTAIL",
-  description: "Find your fit for The Hunter and The King.",
+  description: "Find your fit for GENESIS//001.",
 };
 
 const SIZES = [
@@ -28,7 +28,7 @@ export default async function SizeGuidePage({ searchParams }: { searchParams: Pr
         <h1 className="font-display text-5xl md:text-6xl tracking-wide text-stone-100 mb-10">SIZE GUIDE</h1>
 
         <p className="text-stone-400 leading-relaxed max-w-2xl mb-12">
-          The Hunter and The King are cut from the same classic silhouette — true to size through
+          GENESIS//001 is cut in a classic silhouette — true to size through
           the chest and body. All measurements below are taken with the garment laid flat, in inches.
           For the relaxed, oversized drape shown in our photos, size up one from your usual.
         </p>

@@ -21,7 +21,7 @@ export default function ShopPage() {
         </div>
         <div className="border-t border-stone-800/50 mb-12" />
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-12">
-          <p className="text-stone-500 text-sm">{products.length} pieces</p>
+          <p className="text-stone-500 text-sm">{products.length} {products.length === 1 ? "piece" : "pieces"}</p>
           <p className="text-stone-600 text-xs tracking-[0.2em]">
             MADE TO ORDER — {getDropClosingPhrase()}.{" "}
             <Link href="/shipping" className="underline hover:text-stone-400 transition-colors">
@@ -29,7 +29,7 @@ export default function ShopPage() {
             </Link>
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
+        <div className="grid grid-cols-1 gap-8 xl:gap-12 max-w-4xl mx-auto">
           {products.map((p) => <ProductCard key={p.id} product={p} />)}
         </div>
       </div>

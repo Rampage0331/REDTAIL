@@ -46,7 +46,7 @@ export default function HomePage() {
           <p className="text-base tracking-[0.3em] text-stone-600 mb-3">{DROP_NAME.toUpperCase()}</p>
           <h2 className="font-display text-6xl xl:text-7xl 2xl:text-8xl tracking-wide text-stone-100">FEATURED</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-16 max-w-5xl xl:max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-10 xl:gap-16 max-w-4xl mx-auto">
           {featured.map((p) => <ProductCard key={p.id} product={p} />)}
         </div>
       </section>
