@@ -3,6 +3,13 @@ import { prisma } from '@/lib/db';
 import { getProductById } from '@/lib/products';
 import { ThemeSetter } from '@/components/ThemeSetter';
 import OrdersBoard, { type AdminOrderRow } from '@/components/admin/OrdersBoard';
+import { runHealthChecks, type CheckStatus } from '@/lib/healthcheck';
+
+const STATUS_STYLES: Record<CheckStatus, { dot: string; label: string }> = {
+  ok: { dot: 'bg-emerald-500', label: 'OK' },
+  warn: { dot: 'bg-amber-500', label: 'HEADS UP' },
+  fail: { dot: 'bg-red-500', label: 'BROKEN' },
+};
 
 export const dynamic = 'force-dynamic';
 
@@ -23,10 +30,13 @@ function parseJson<T>(raw: string | null, fallback: T): T {
 }
 
 export default async function AdminPage() {
-  const orders = await prisma.order.findMany({
-    where: { status: 'paid' },
-    orderBy: { createdAt: 'asc' },
-  });
+  const [orders, checks] = await Promise.all([
+    prisma.order.findMany({
+      where: { status: 'paid' },
+      orderBy: { createdAt: 'asc' },
+    }),
+    runHealthChecks(),
+  ]);
 
   const rows: AdminOrderRow[] = orders.map((o) => {
     const items = parseJson<CartItem[]>(o.cartJson, []);
@@ -94,6 +104,24 @@ export default async function AdminPage() {
         </section>
 
         <OrdersBoard rows={rows} />
+
+        <section>
+          <h2 className="text-xs tracking-[0.2em] text-stone-500 mb-4">SYSTEM CHECK</h2>
+          <ul className="border border-stone-800 divide-y divide-stone-800">
+            {checks.map((c) => (
+              <li key={c.name} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 px-4 py-3 text-sm">
+                <span className="flex items-center gap-3 sm:w-64 shrink-0">
+                  <span className={`w-2 h-2 rounded-full ${STATUS_STYLES[c.status].dot}`} />
+                  <span className="text-stone-200">{c.name}</span>
+                </span>
+                <span className="text-[11px] tracking-[0.15em] text-stone-500 sm:w-20 shrink-0">
+                  {STATUS_STYLES[c.status].label}
+                </span>
+                <span className="text-stone-400 break-words">{c.detail}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
