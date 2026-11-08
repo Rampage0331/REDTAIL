@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description,
     url: "/",
     siteName: "REDTAIL",
-    images: [{ url: "/images/story-campaign.jpg", alt: "REDTAIL" }],
+    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: "REDTAIL — Genesis//001 The Hunt Begins" }],
     locale: "en_US",
     type: "website",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "REDTAIL",
     description,
-    images: ["/images/story-campaign.jpg"],
+    images: ["/images/og.png"],
   },
 };
 
