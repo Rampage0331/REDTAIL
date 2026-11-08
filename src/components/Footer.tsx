@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="flex flex-col items-center text-center">
-            <Image src="/images/logo-mark.png" alt="" width={128} height={128} className="h-16 w-16 mb-4" />
+            <Image src="/images/logo-mark.svg" alt="" width={128} height={128} className="h-16 w-16 mb-4" />
             <p className="text-sm tracking-[0.4em] text-stone-100 mb-3">
               <span style={{ color: '#e40000' }}>R</span>EDTAIL
             </p>

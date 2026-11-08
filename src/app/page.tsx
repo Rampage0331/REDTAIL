@@ -17,7 +17,7 @@ export default function HomePage() {
 
         {/* Background watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <Image src="/images/logo-mark.png" alt="" width={800} height={800} className="w-[380px] h-auto opacity-[0.18]" priority />
+          <Image src="/images/logo-mark.svg" alt="" width={800} height={800} className="w-[380px] h-auto opacity-[0.18]" priority />
         </div>
 
 
