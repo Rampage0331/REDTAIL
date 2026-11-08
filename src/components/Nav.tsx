@@ -42,11 +42,11 @@ export default function Nav() {
         >
           <Link href="/">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-mark.png"
               alt="Redtail"
-              width={110}
-              height={55}
-              className="h-9 w-auto"
+              width={80}
+              height={80}
+              className="h-10 w-10"
               priority
             />
           </Link>
