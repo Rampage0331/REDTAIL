@@ -55,7 +55,7 @@ export default function HomePage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {[
-            { label: "01 — MATERIAL",     value: "PREMIUM COTTON",     sub: "Soft, structured, and made for everyday wear." },
+            { label: "01 — MATERIAL",     value: "HEAVYWEIGHT COTTON", sub: "7.5 oz, 100% cotton — thick, opaque, and built to keep its shape." },
             { label: "02 — CONSTRUCTION", value: "SIGNATURE DETAILS",  sub: "Distinct graphics, a woven hem tag, and considered finishes." },
             { label: "03 — FIT",          value: "OVERSIZED",          sub: "Boxy body, dropped shoulders — order your usual size for the intended fit." },
           ].map(({ label, value, sub }) => (

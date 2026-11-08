@@ -14,17 +14,18 @@ export type StripeAddress = {
   country?: string | null;
 };
 
-// Estimated bagged weight per shirt in ounces, by size. Replace with real
-// kitchen-scale numbers once the printed shirts are in hand.
+// Estimated printed weight per shirt in ounces, by size, for the 7.5 oz
+// Oversized Box blank (rounded up so labels aren't underpaid). Replace with
+// real kitchen-scale numbers once the printed shirts are in hand.
 const SHIRT_WEIGHT_OZ: Record<string, number> = {
-  S: 7.5,
-  M: 8,
-  L: 8.5,
-  XL: 9,
-  XXL: 10,
-  '3XL': 11,
+  S: 9,
+  M: 9.5,
+  L: 10,
+  XL: 11,
+  XXL: 12,
+  '3XL': 13,
 };
-const DEFAULT_SHIRT_OZ = 9;
+const DEFAULT_SHIRT_OZ = 11;
 const MAILER_WEIGHT_OZ = 1;
 
 type ShippoRate = {
