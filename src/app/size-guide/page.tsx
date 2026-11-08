@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 };
 
 const SIZES = [
-  { size: "S", chest: "19", length: "27½", sleeve: "8" },
-  { size: "M", chest: "21", length: "29", sleeve: "8½" },
-  { size: "L", chest: "22½", length: "30½", sleeve: "9" },
-  { size: "XL", chest: "24½", length: "31¼", sleeve: "9½" },
-  { size: "XXL", chest: "26", length: "33", sleeve: "9¾" },
-  { size: "3XL", chest: "27½", length: "34¼", sleeve: "10" },
+  { size: "S", chest: "20½", length: "27¼", shoulder: "19½", sleeve: "8¼" },
+  { size: "M", chest: "22", length: "28¼", shoulder: "21", sleeve: "8½" },
+  { size: "L", chest: "23½", length: "29¼", shoulder: "22½", sleeve: "8¾" },
+  { size: "XL", chest: "25", length: "30¼", shoulder: "24", sleeve: "9" },
+  { size: "XXL", chest: "26½", length: "31¼", shoulder: "25½", sleeve: "9¼" },
+  { size: "3XL", chest: "28", length: "32¼", shoulder: "27", sleeve: "9½" },
 ];
 
 export default async function SizeGuidePage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
@@ -40,6 +40,7 @@ export default async function SizeGuidePage({ searchParams }: { searchParams: Pr
                 <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">SIZE</th>
                 <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">CHEST</th>
                 <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">BODY LENGTH</th>
+                <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">SHOULDER</th>
                 <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">SLEEVE LENGTH</th>
               </tr>
             </thead>
@@ -49,6 +50,7 @@ export default async function SizeGuidePage({ searchParams }: { searchParams: Pr
                   <td className="px-6 py-4 text-stone-100 tracking-wide">{row.size}</td>
                   <td className="px-6 py-4 text-stone-400">{row.chest}&quot;</td>
                   <td className="px-6 py-4 text-stone-400">{row.length}&quot;</td>
+                  <td className="px-6 py-4 text-stone-400">{row.shoulder}&quot;</td>
                   <td className="px-6 py-4 text-stone-400">{row.sleeve}&quot;</td>
                 </tr>
               ))}

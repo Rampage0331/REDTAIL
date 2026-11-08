@@ -26,7 +26,7 @@ export const products: Product[] = [
     collection: "The Hunt Begins",
     drop: "Genesis//001 The Hunt Begins",
     details: [
-      "6.5 oz mid-weight 100% premium cotton — structured enough to hold shape, light enough to move",
+      "7.5 oz heavyweight 100% premium cotton — thick, opaque, and built to hold its boxy shape wash after wash",
       "Vintage washed for a faded, sun-worn finish — no two pieces fade quite the same",
       "Oversized, boxy fit with dropped shoulders",
       "Order your usual size for the intended fit — size down for a closer fit",
