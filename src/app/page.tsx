@@ -56,8 +56,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {[
             { label: "01 — MATERIAL",     value: "PREMIUM COTTON",     sub: "Soft, structured, and made for everyday wear." },
-            { label: "02 — CONSTRUCTION", value: "SIGNATURE DETAILS",  sub: "Distinct graphics, contrast hems, and considered finishes." },
-            { label: "03 — FIT",          value: "TRUE TO SIZE",       sub: "Cut true to size through the chest and body — size up for a relaxed, oversized fit." },
+            { label: "02 — CONSTRUCTION", value: "SIGNATURE DETAILS",  sub: "Distinct graphics, a woven hem tag, and considered finishes." },
+            { label: "03 — FIT",          value: "OVERSIZED",          sub: "Boxy body, dropped shoulders — order your usual size for the intended fit." },
           ].map(({ label, value, sub }) => (
             <div key={label}>
               <p className="text-xs xl:text-sm tracking-[0.3em] text-stone-600 mb-3">{label}</p>

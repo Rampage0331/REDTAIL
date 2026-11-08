@@ -28,9 +28,10 @@ export const products: Product[] = [
     details: [
       "6.5 oz mid-weight 100% premium cotton — structured enough to hold shape, light enough to move",
       "Vintage washed for a faded, sun-worn finish — no two pieces fade quite the same",
-      "Classic fit through the shoulder and body",
-      "Size up for an oversized, relaxed fit",
-      "Left-chest logo, full back graphic",
+      "Oversized, boxy fit with dropped shoulders",
+      "Order your usual size for the intended fit — size down for a closer fit",
+      "Chest wordmark, full back graphic",
+      "Woven hem tag",
     ],
     image: "/images/genesis-001.png",
   },
