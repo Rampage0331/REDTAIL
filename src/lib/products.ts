@@ -1,4 +1,4 @@
-﻿export type Product = {
+export type Product = {
   id: string;
   name: string;
   description: string;
@@ -34,7 +34,7 @@ export const products: Product[] = [
       "Chest wordmark, full back graphic",
       "Woven hem tag",
     ],
-    image: "/images/genesis-001.png",
+    image: "/images/genesis-001-v3.png",
   },
 ];
 
