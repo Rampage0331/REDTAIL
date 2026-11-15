@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CartDrawer from "@/components/CartDrawer";
 import AdPixels from "@/components/AdPixels";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Nav />
             <main>{children}</main>
             <Footer />
+            <CartDrawer />
           </ThemeProvider>
         </CartProvider>
         <Analytics />

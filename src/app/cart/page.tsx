@@ -1,37 +1,15 @@
 'use client';
-import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ThemeSetter } from '@/components/ThemeSetter';
 import { getDropClosingPhrase } from '@/lib/drop';
+import { useCheckout } from '@/lib/useCheckout';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, totalItems, totalPrice } = useCart();
-  const [isCheckingOut, setIsCheckingOut] = useState(false);
-  const [checkoutError, setCheckoutError] = useState<string | null>(null);
-
-  const handleCheckout = async () => {
-    setIsCheckingOut(true);
-    setCheckoutError(null);
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: items.map(({ id, color, size, quantity }) => ({ id, color, size, quantity })),
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.url) {
-        throw new Error(data.error ?? 'Checkout failed');
-      }
-      window.location.href = data.url;
-    } catch (err) {
-      setCheckoutError(err instanceof Error ? err.message : 'Checkout failed');
-      setIsCheckingOut(false);
-    }
-  };
+  const { checkout, isCheckingOut, checkoutError } = useCheckout();
+  const handleCheckout = () => checkout(items);
 
   return (
     <div className="pt-32 pb-24 min-h-dvh">

@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
 import { ThemeSetter } from "@/components/ThemeSetter";
 import { BackToProductLink, BackToProductButton } from "@/components/BackToProduct";
+import SizeChart from "@/components/SizeChart";
 
 export const metadata: Metadata = {
   title: "Size Guide | REDTAIL",
   description: "Find your fit for GENESIS // 001.",
 };
-
-const SIZES = [
-  { size: "S", chest: "20½", length: "27¼", shoulder: "19½", sleeve: "8¼" },
-  { size: "M", chest: "22", length: "28¼", shoulder: "21", sleeve: "8½" },
-  { size: "L", chest: "23½", length: "29¼", shoulder: "22½", sleeve: "8¾" },
-  { size: "XL", chest: "25", length: "30¼", shoulder: "24", sleeve: "9" },
-  { size: "XXL", chest: "26½", length: "31¼", shoulder: "25½", sleeve: "9¼" },
-  { size: "3XL", chest: "28", length: "32¼", shoulder: "27", sleeve: "9½" },
-];
 
 export default async function SizeGuidePage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
   const { from } = await searchParams;
@@ -33,30 +25,7 @@ export default async function SizeGuidePage({ searchParams }: { searchParams: Pr
           are taken with the garment laid flat, in inches.
         </p>
 
-        <div className="overflow-x-auto border border-stone-800/50">
-          <table className="w-full text-left border-collapse min-w-[480px]">
-            <thead>
-              <tr className="border-b border-stone-800/50">
-                <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">SIZE</th>
-                <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">CHEST</th>
-                <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">BODY LENGTH</th>
-                <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">SHOULDER</th>
-                <th className="px-6 py-4 text-xs tracking-[0.2em] text-stone-600 font-medium">SLEEVE LENGTH</th>
-              </tr>
-            </thead>
-            <tbody>
-              {SIZES.map((row, i) => (
-                <tr key={row.size} className={i !== SIZES.length - 1 ? "border-b border-stone-800/50" : ""}>
-                  <td className="px-6 py-4 text-stone-100 tracking-wide">{row.size}</td>
-                  <td className="px-6 py-4 text-stone-400">{row.chest}&quot;</td>
-                  <td className="px-6 py-4 text-stone-400">{row.length}&quot;</td>
-                  <td className="px-6 py-4 text-stone-400">{row.shoulder}&quot;</td>
-                  <td className="px-6 py-4 text-stone-400">{row.sleeve}&quot;</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <SizeChart />
 
         <div className="mt-10 space-y-4 max-w-2xl">
           <p className="text-stone-500 text-sm leading-relaxed">

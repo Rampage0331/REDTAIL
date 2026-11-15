@@ -9,7 +9,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [showLogo, setShowLogo] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { totalItems } = useCart();
+  const { totalItems, openDrawer } = useCart();
 
   useEffect(() => {
     const onScroll = () => {
@@ -67,7 +67,7 @@ export default function Nav() {
           </nav>
 
           {/* Cart icon */}
-          <Link href="/cart" className="relative text-stone-400 hover:text-stone-100 transition-colors duration-300">
+          <button type="button" onClick={openDrawer} aria-label={`Open cart (${totalItems} items)`} className="relative text-stone-400 hover:text-stone-100 transition-colors duration-300">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
               <line x1="3" y1="6" x2="21" y2="6"/>
@@ -83,7 +83,7 @@ export default function Nav() {
             >
               {totalItems}
             </span>
-          </Link>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -109,16 +109,16 @@ export default function Nav() {
               {label}
             </Link>
           ))}
-          <Link
-            href="/cart"
-            className="font-display text-3xl tracking-widest text-stone-400 hover:text-stone-100 transition-colors flex items-center gap-4"
-            onClick={() => setMenuOpen(false)}
+          <button
+            type="button"
+            className="font-display text-3xl tracking-widest text-stone-400 hover:text-stone-100 transition-colors flex items-center gap-4 text-left"
+            onClick={() => { setMenuOpen(false); openDrawer(); }}
           >
             CART
             {totalItems > 0 && (
               <span className="text-base font-sans" style={{ color: 'var(--color-accent)' }}>({totalItems})</span>
             )}
-          </Link>
+          </button>
         </div>
       )}
     </header>
