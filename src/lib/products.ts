@@ -28,7 +28,7 @@ export const products: Product[] = [
     details: [
       "7.5 oz heavyweight 100% cotton — thick, opaque, and built to hold its shape wash after wash",
       "16-single yarn knit for a dry, substantial hand feel",
-      "Heavily washed for a faded, years-worn finish — every piece breaks differently, so no two are the same",
+      "Vintage washed — the color breaks unevenly for a faded, broken-in look, so every piece varies slightly",
       "Oversized, boxy cut with dropped shoulders that hangs square",
       "Order your usual size for the intended fit — size down for a closer fit",
       "Chest wordmark, full back graphic",
