@@ -32,7 +32,7 @@ export default async function ShippingPage({ searchParams }: { searchParams: Pro
           <ul className="space-y-4">
             <li className="text-stone-400 text-sm leading-relaxed flex items-start gap-3">
               <span style={{ color: 'var(--color-accent)' }} className="mt-1">—</span>
-              Genesis//001 is open for a limited window{closeDate ? ` — ordering closes ${closeDate}` : ""}.
+              Genesis // 001 is open for a limited window{closeDate ? ` — ordering closes ${closeDate}` : ""}.
               Once it closes, we go straight to production for everyone who ordered.
             </li>
             <li className="text-stone-400 text-sm leading-relaxed flex items-start gap-3">

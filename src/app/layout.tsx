@@ -16,7 +16,7 @@ const siteUrl =
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
 const description =
-  "Discern. Commit. Pursue. Premium made-to-order apparel — Genesis//001 The Hunt Begins.";
+  "Discern. Commit. Pursue. Premium made-to-order apparel — Genesis // 001 The Hunt Begins.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description,
     url: "/",
     siteName: "REDTAIL",
-    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: "REDTAIL — Genesis//001 The Hunt Begins" }],
+    images: [{ url: "/images/og-v2.png", width: 1200, height: 630, alt: "REDTAIL — Genesis // 001 The Hunt Begins" }],
     locale: "en_US",
     type: "website",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "REDTAIL",
     description,
-    images: ["/images/og.png"],
+    images: ["/images/og-v2.png"],
   },
 };
 

@@ -38,7 +38,7 @@ export default function AddToCartButton({ product }: Props) {
   if (isDropClosed()) {
     return (
       <div className="space-y-4 border border-stone-800 px-6 py-8 text-center">
-        <p className="text-stone-300 tracking-[0.2em] text-sm">GENESIS//001 HAS CLOSED</p>
+        <p className="text-stone-300 tracking-[0.2em] text-sm">GENESIS // 001 HAS CLOSED</p>
         <p className="text-stone-600 text-sm">
           This drop is no longer accepting orders. Follow along for the next one.
         </p>

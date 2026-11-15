@@ -12,19 +12,19 @@ export type Product = {
   image?: string;
 };
 
-export const DROP_NAME = "Genesis//001 The Hunt Begins";
+export const DROP_NAME = "Genesis // 001 The Hunt Begins";
 
 export const products: Product[] = [
   {
     id: "genesis-001",
-    name: "GENESIS//001",
+    name: "GENESIS // 001",
     description: "Unyielding. Relentless. Moves when the moment demands — not a second before.",
     price: 65,
     sizes: ["S", "M", "L", "XL", "XXL", "3XL"],
     colors: ["Washed Coal // White"],
     featured: true,
     collection: "The Hunt Begins",
-    drop: "Genesis//001 The Hunt Begins",
+    drop: "Genesis // 001 The Hunt Begins",
     details: [
       "7.5 oz heavyweight 100% cotton — thick, opaque, and built to hold its shape wash after wash",
       "16-single yarn knit for a dry, substantial hand feel",

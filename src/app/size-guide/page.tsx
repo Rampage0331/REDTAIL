@@ -4,7 +4,7 @@ import { BackToProductLink, BackToProductButton } from "@/components/BackToProdu
 
 export const metadata: Metadata = {
   title: "Size Guide | REDTAIL",
-  description: "Find your fit for GENESIS//001.",
+  description: "Find your fit for GENESIS // 001.",
 };
 
 const SIZES = [
@@ -28,7 +28,7 @@ export default async function SizeGuidePage({ searchParams }: { searchParams: Pr
         <h1 className="font-display text-5xl md:text-6xl tracking-wide text-stone-100 mb-10">SIZE GUIDE</h1>
 
         <p className="text-stone-400 leading-relaxed max-w-2xl mb-12">
-          GENESIS//001 is cut oversized — a boxy body with dropped shoulders. Order your usual size
+          GENESIS // 001 is cut oversized — a boxy body with dropped shoulders. Order your usual size
           for the intended fit, or size down for something closer to the body. All measurements below
           are taken with the garment laid flat, in inches.
         </p>

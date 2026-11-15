@@ -7,7 +7,7 @@ import { ThemeSetter } from "@/components/ThemeSetter";
 
 export const metadata: Metadata = {
   title: `Shop — ${DROP_NAME} | REDTAIL`,
-  description: "Shop the REDTAIL Genesis//001 drop. Discern. Commit. Pursue.",
+  description: "Shop the REDTAIL Genesis // 001 drop. Discern. Commit. Pursue.",
 };
 
 export default function ShopPage() {
