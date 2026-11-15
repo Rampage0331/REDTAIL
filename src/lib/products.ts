@@ -34,7 +34,7 @@ export const products: Product[] = [
       "Chest wordmark, full back graphic",
       "Woven hem tag",
     ],
-    image: "/images/genesis-001-white.png",
+    image: "/images/genesis-001-white-v2.png",
   },
 ];
 
