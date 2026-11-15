@@ -21,7 +21,7 @@ export const products: Product[] = [
     description: "Unyielding. Relentless. Moves when the moment demands — not a second before.",
     price: 65,
     sizes: ["S", "M", "L", "XL", "XXL", "3XL"],
-    colors: ["Vintage Black // Red"],
+    colors: ["Vintage Black // White"],
     featured: true,
     collection: "The Hunt Begins",
     drop: "Genesis//001 The Hunt Begins",
@@ -34,7 +34,7 @@ export const products: Product[] = [
       "Chest wordmark, full back graphic",
       "Woven hem tag",
     ],
-    image: "/images/genesis-001-v3.png",
+    image: "/images/genesis-001-white.png",
   },
 ];
 
