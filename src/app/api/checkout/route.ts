@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import type Stripe from 'stripe';
 import { getStripeClient } from '@/lib/stripe';
 import { getProductById } from '@/lib/products';
+import { isClosed } from '@/lib/release';
 
 type CheckoutItem = {
   id: string;
@@ -35,6 +36,9 @@ export async function POST(request: NextRequest) {
     const product = getProductById(item.id);
     if (!product) {
       return NextResponse.json({ error: `Unknown product: ${item.id}` }, { status: 400 });
+    }
+    if (isClosed(product)) {
+      return NextResponse.json({ error: `${product.name} is closed and no longer taking orders` }, { status: 400 });
     }
     if (!product.sizes.includes(item.size) || !product.colors.includes(item.color)) {
       return NextResponse.json({ error: `Invalid variant for ${product.name}` }, { status: 400 });

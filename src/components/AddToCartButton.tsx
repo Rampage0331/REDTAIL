@@ -2,19 +2,11 @@
 import { useCart } from '@/context/CartContext';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { isDropClosed, getDropClosingPhrase } from '@/lib/drop';
+import { isClosed, releasePhrase } from '@/lib/release';
+import type { Product } from '@/lib/products';
 import SizeChart from '@/components/SizeChart';
 
-type Props = {
-  product: {
-    id: string;
-    name: string;
-    price: number;
-    image?: string;
-    colors: string[];
-    sizes: string[];
-  };
-};
+type Props = { product: Product };
 
 export default function AddToCartButton({ product }: Props) {
   const { addItem, drawerOpen } = useCart();
@@ -58,12 +50,12 @@ export default function AddToCartButton({ product }: Props) {
     setTimeout(() => setNudgeSize(false), 1600);
   };
 
-  if (isDropClosed()) {
+  if (isClosed(product)) {
     return (
       <div className="space-y-4 border border-stone-800 px-6 py-8 text-center">
-        <p className="text-stone-300 tracking-[0.2em] text-sm">GENESIS // 001 HAS CLOSED</p>
+        <p className="text-stone-300 tracking-[0.2em] text-sm">{product.name.toUpperCase()}{product.collection ? ` ${product.collection.toUpperCase()}` : ''} HAS CLOSED</p>
         <p className="text-stone-600 text-sm">
-          This drop is no longer accepting orders. Follow along for the next one.
+          This release is no longer accepting orders. Follow along for what&apos;s next.
         </p>
       </div>
     );
@@ -137,9 +129,10 @@ export default function AddToCartButton({ product }: Props) {
       {/* What buyers want to know before they commit */}
       <ul className="border-t border-stone-800/60 pt-5 space-y-2.5">
         {[
-          `MADE TO ORDER — ${getDropClosingPhrase()}`,
+          releasePhrase(product),
+          'MADE TO ORDER',
           'FREE U.S. SHIPPING',
-          'CANCEL ANYTIME WHILE THE DROP IS OPEN',
+          product.release.type === 'drop' ? 'CANCEL ANYTIME WHILE THE RELEASE IS OPEN' : 'CANCEL ANYTIME BEFORE IT GOES TO PRINT',
           '14-DAY RETURNS & EXCHANGES',
         ].map((line) => (
           <li key={line} className="flex items-start gap-3 text-[11px] tracking-[0.18em] text-stone-400">

@@ -34,12 +34,13 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section title="The Drop Model">
+        <Section title="How We Release Products">
           <p>
-            REDTAIL sells in limited, made-to-order drops. Each drop is open for a limited window,
-            after which we go straight to production for everyone who ordered. You can cancel your
-            order at any time while a drop is still open. Once the window closes and production
-            starts, orders are final. Full details are on our{" "}
+            Everything REDTAIL sells is made to order. Limited releases are open for a short window,
+            after which we go straight to production for everyone who ordered; you can cancel at any
+            time while a release is still open, and once the window closes and production starts,
+            orders are final. Core collection pieces are available year-round and printed after each
+            order; you can cancel a core order by emailing us before it goes to print. Full details are on our{" "}
             <Link href="/shipping" className="text-stone-300 underline hover:text-stone-100 transition-colors">
               Shipping &amp; Returns
             </Link>{" "}
@@ -67,9 +68,8 @@ export default function TermsPage() {
 
         <Section title="Product Availability">
           <p>
-            Because each drop is made to order in limited quantities, sizes and colorways may sell
-            out during the ordering window, and exchanges after a drop closes are subject to
-            whatever stock remains.
+            Because everything is made to order, limited releases are only available during their
+            ordering window, and exchanges are subject to whatever stock remains.
           </p>
         </Section>
 

@@ -10,6 +10,9 @@ export type Product = {
   drop?: string;
   details?: string[];
   image?: string;
+  // "drop": limited window, closes at closesAt (null until a launch date is set).
+  // "core": always available, made to order continuously.
+  release: { type: "drop"; closesAt: string | null } | { type: "core" };
 };
 
 export const DROP_NAME = "Genesis // 001 The Hunt Begins";
@@ -23,7 +26,7 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL", "XXL", "3XL"],
     colors: ["Washed Coal // White"],
     featured: true,
-    collection: "The Hunt Begins",
+    collection: "First Edition",
     drop: "Genesis // 001 The Hunt Begins",
     details: [
       "7.5 oz heavyweight 100% cotton — thick, opaque, and built to hold its shape wash after wash",
@@ -32,9 +35,11 @@ export const products: Product[] = [
       "Oversized, boxy cut with dropped shoulders that hangs square",
       "Order your usual size for the intended fit — size down for a closer fit",
       "Chest wordmark, full back graphic",
-      "Woven hem tag",
+      "First Edition: white woven hem tag with red tail feathers — made only during the launch window, never again",
     ],
     image: "/images/genesis-001-white-v2.png",
+    // Set to the close time on launch day: launch + 4 weeks, e.g. "2026-12-31T23:59:59-08:00".
+    release: { type: "drop", closesAt: null },
   },
 ];
 

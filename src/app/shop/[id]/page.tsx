@@ -70,14 +70,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <p className="text-xl text-stone-300 mb-6">${product.price}</p>
             <p className="text-stone-400 leading-relaxed mb-10">{product.description}</p>
 
-            <AddToCartButton product={{
-              id: product.id,
-              name: product.name,
-              price: product.price,
-              image: product.image,
-              colors: product.colors,
-              sizes: product.sizes,
-            }} />
+            <AddToCartButton product={product} />
 
             {/* Details */}
             {product.details && (

@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useCheckout } from '@/lib/useCheckout';
-import { getDropClosingPhrase } from '@/lib/drop';
+import { releasePhrase } from '@/lib/release';
+import { getProductById } from '@/lib/products';
 
 export default function CartDrawer() {
   const { items, removeItem, updateQuantity, totalItems, totalPrice, drawerOpen, closeDrawer } = useCart();
@@ -79,7 +80,11 @@ export default function CartDrawer() {
                       <h3 className="font-display text-xl tracking-wide text-stone-100 leading-tight">{item.name.toUpperCase()}</h3>
                       <span className="text-stone-300">${item.price * item.quantity}</span>
                     </div>
-                    <p className="text-[11px] tracking-widest text-stone-500 mt-1 mb-4">{item.color.toUpperCase()} / {item.size}</p>
+                    <p className="text-[11px] tracking-widest text-stone-500 mt-1">{item.color.toUpperCase()} / {item.size}</p>
+                    {getProductById(item.id) && (
+                      <p className="text-[10px] tracking-[0.15em] text-stone-600 mt-1">{releasePhrase(getProductById(item.id)!)}</p>
+                    )}
+                    <div className="mb-4" />
                     <div className="flex items-center gap-5">
                       <div className="flex items-center border border-stone-700">
                         <button
@@ -113,7 +118,7 @@ export default function CartDrawer() {
                 <span className="text-stone-200 text-lg tabular-nums">${totalPrice}</span>
               </div>
               <p className="text-stone-600 text-[11px] tracking-[0.15em] leading-relaxed">
-                FREE U.S. SHIPPING. TAX CALCULATED AT CHECKOUT. MADE TO ORDER — {getDropClosingPhrase()}.
+                MADE TO ORDER. FREE U.S. SHIPPING. TAX CALCULATED AT CHECKOUT.
               </p>
               <button
                 onClick={() => checkout(items)}

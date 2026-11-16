@@ -3,7 +3,8 @@ import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ThemeSetter } from '@/components/ThemeSetter';
-import { getDropClosingPhrase } from '@/lib/drop';
+import { releasePhrase } from '@/lib/release';
+import { getProductById } from '@/lib/products';
 import { useCheckout } from '@/lib/useCheckout';
 
 export default function CartPage() {
@@ -37,7 +38,10 @@ export default function CartPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-display text-2xl tracking-wide text-stone-100 mb-1">{item.name.toUpperCase()}</h3>
-                    <p className="text-xs tracking-widest text-stone-500 mb-5">{item.color.toUpperCase()} / {item.size}</p>
+                    <p className="text-xs tracking-widest text-stone-500 mb-1">{item.color.toUpperCase()} / {item.size}</p>
+                    <p className="text-[10px] tracking-[0.15em] text-stone-600 mb-5">
+                      {getProductById(item.id) ? releasePhrase(getProductById(item.id)!) : ''}
+                    </p>
                     <div className="flex items-center gap-6">
                       <div className="flex items-center border border-stone-700">
                         <button
@@ -69,7 +73,7 @@ export default function CartPage() {
                 <span className="text-stone-300 font-medium text-xl">${totalPrice}</span>
               </div>
               <p className="text-stone-600 text-xs tracking-[0.2em] w-full max-w-sm text-right">
-                MADE TO ORDER — {getDropClosingPhrase()}. SHIPPING INCLUDED.
+                MADE TO ORDER. FREE U.S. SHIPPING.
               </p>
               <div className="border-t border-stone-800/50 w-full max-w-sm" />
               <button
@@ -83,7 +87,7 @@ export default function CartPage() {
                 <p className="text-red-500 text-xs tracking-widest w-full max-w-sm text-right">{checkoutError}</p>
               )}
               <Link href="/shipping" className="text-stone-700 text-xs tracking-[0.2em] underline hover:text-stone-500 transition-colors">
-                CANCEL ANYTIME BEFORE THEN — FULL SHIPPING &amp; RETURNS POLICY
+                SHIPPING &amp; RETURNS POLICY
               </Link>
             </div>
           </>
