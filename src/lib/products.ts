@@ -21,7 +21,7 @@ export const products: Product[] = [
   {
     id: "genesis-001",
     name: "GENESIS // 001",
-    description: "Unyielding. Relentless. Moves when the moment demands — not a second before.",
+    description: "The hunt begins.",
     price: 65,
     sizes: ["S", "M", "L", "XL", "XXL", "3XL"],
     colors: ["Washed Coal // White"],
