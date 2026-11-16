@@ -53,10 +53,11 @@ export default function AddToCartButton({ product }: Props) {
   if (isClosed(product)) {
     return (
       <div className="space-y-4 border border-stone-800 px-6 py-8 text-center">
-        <p className="text-stone-300 tracking-[0.2em] text-sm">{product.name.toUpperCase()}{product.collection ? ` ${product.collection.toUpperCase()}` : ''} HAS CLOSED</p>
+        <p className="text-stone-300 tracking-[0.2em] text-sm">THE {product.collection ? product.collection.toUpperCase() : product.name.toUpperCase()} HAS CLOSED</p>
         <p className="text-stone-600 text-sm">
-          This release is no longer accepting orders. Follow along for what&apos;s next.
+          This release is no longer accepting orders.
         </p>
+        <p className="font-display text-2xl tracking-[0.2em]" style={{ color: 'var(--color-accent)' }}>KEEP HUNTING.</p>
       </div>
     );
   }

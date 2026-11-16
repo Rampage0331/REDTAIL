@@ -13,6 +13,7 @@ export default function Footer() {
               <span style={{ color: '#e40000' }}>R</span>EDTAIL
             </p>
             <p className="text-xs tracking-[0.3em] text-stone-500 mb-1">DISCERN. COMMIT. PURSUE.</p>
+            <p className="text-[10px] tracking-[0.4em] text-stone-700 mt-2">KEEP HUNTING</p>
           </div>
 
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
