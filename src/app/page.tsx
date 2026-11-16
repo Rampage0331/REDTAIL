@@ -51,6 +51,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* STATEMENT */}
+      <section className="px-6 py-28 md:py-40">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="w-12 h-px mx-auto mb-10" style={{ backgroundColor: 'var(--color-accent)' }} />
+          <p className="font-display text-4xl md:text-6xl xl:text-7xl tracking-wide text-stone-100 leading-[1.05]" style={{ textWrap: 'balance' }}>
+            RECOGNITION FOR MEN<br />WHO DON&apos;T NEED<br className="md:hidden" /> TO ASK FOR IT.
+          </p>
+        </div>
+      </section>
+
       {/* BRAND STRIP */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
